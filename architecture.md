@@ -2,19 +2,19 @@
 
 ## Overview
 
-Pipeline xử lý mỗi file `input/EC_*.json` bằng một coordinator và các agent chuyên trách. Các phép tính nghiệp vụ được thực hiện deterministic từ CSV để evidence, tiền, timestamp và ID luôn truy xuất được. LangChain được dùng ở bước structured output verifier/formatter qua `with_structured_output(CaseOutput, method="tool_calling")`; với version LangChain hiện tại, runtime fallback tương thích là `function_calling`, tức cơ chế tool-call structured output của OpenAI-compatible APIs.
+Pipeline xử lý mỗi file `input/EC_*.json` bằng một coordinator và các agent chuyên trách. Code chỉ đóng vai trò data tool/fallback: đọc CSV, chuẩn bị facts, tính các số liệu cơ sở và kiểm tra schema. Khi LLM chạy được, quyết định cuối đi qua các LLM agent theo batch: domain agents tạo findings, `PolicyAgent` quyết issue/refund/actions, và `VerifierAgent` phát hành `CaseOutput` cuối. LangChain dùng `with_structured_output(..., method="tool_calling")`; với version LangChain hiện tại, runtime fallback tương thích là `function_calling`, tức cơ chế tool-call structured output của OpenAI-compatible APIs.
 
 ## Agent Roles
 
-| Agent | File | Quyền truy cập dữ liệu | Output bàn giao |
-| --- | --- | --- | --- |
-| CoordinatorAgent | `app/main.py` | Input case, tất cả handoff | Điều phối batch, ghi output, trace và metadata |
-| CustomerAgent | `app/agents.py` | `orders`, `customers` | `customer_unique_id`, tối đa 5 related orders |
-| OrderProductAgent | `app/agents.py` | `order_items`, `products`, `sellers` | Product IDs và category context |
-| PaymentAgent | `app/agents.py` | `order_payments`, `order_items` | Tổng item, freight, payment, difference và reconciled |
-| DeliveryAgent | `app/agents.py` | `orders`, `order_items` | Delivery variance và seller handoff analysis |
-| PolicyAgent | `app/agents.py` | Handoff đã tổng hợp | Primary issue, secondary issues, parties, refund và actions theo `EC_POLICY_V2` |
-| VerifierAgent | `app/agents.py` | Output của mọi agent | Giới hạn array, dựng affected entities, evidence IDs và schema cuối |
+| Agent | File | Quyền truy cập dữ liệu | Structured output schema | Output bàn giao |
+| --- | --- | --- | --- | --- |
+| CoordinatorAgent | `app/main.py` | Input case, tất cả handoff | `CaseOutput` | Điều phối batch, ghi output, trace và metadata |
+| CustomerAgent | `app/agents.py` | `orders`, `customers` | `CustomerFinding` | `customer_unique_id`, tối đa 5 related orders |
+| OrderProductAgent | `app/agents.py` | `order_items`, `products`, `sellers` | `OrderProductFinding` | Product IDs, category context, item/seller IDs |
+| PaymentAgent | `app/agents.py` | `order_payments`, `order_items` | `PaymentFinding` | Tổng item, freight, payment, difference và reconciled |
+| DeliveryAgent | `app/agents.py` | `orders`, `order_items` | `DeliveryFinding` | Delivery variance và seller handoff analysis |
+| PolicyAgent | `app/agents.py` | Handoff đã tổng hợp | `PolicyFinding` | Primary issue, secondary issues, parties, refund và actions theo `EC_POLICY_V2` |
+| VerifierAgent | `app/agents.py` | Output của mọi agent | `VerificationFinding` | Giới hạn array, dựng affected entities, evidence IDs và schema cuối |
 
 ## Handoff Flow
 
@@ -24,9 +24,10 @@ Pipeline xử lý mỗi file `input/EC_*.json` bằng một coordinator và các
 4. `PaymentAgent` nhận `items + payments`, tính payment reconciliation.
 5. `DeliveryAgent` nhận `order + items`, tính delivery variance và handoff variance theo từng seller.
 6. `PolicyAgent` nhận toàn bộ handoff, áp thứ tự ưu tiên của `EC_POLICY_V2`.
-7. `VerifierAgent` dựng `CaseOutput` bằng Pydantic schema, giới hạn danh sách và evidence hợp lệ.
-8. Nếu bật LLM và có `OPENROUTER_API_KEY`, `CoordinatorAgent` gọi LangChain structured output để emit đúng `CaseOutput`; prompt chỉ cho phép trả lại JSON đã kiểm chứng, không thêm fact mới.
-9. Output được ghi vào `output/<case_id>.json`; trace mới nhất ghi vào `logging/trace.jsonl`; metadata ghi vào `logging/metadata.json`.
+7. Sau khi chuẩn bị facts cho toàn bộ batch, coordinator gom prompt theo từng domain agent và gọi LangChain `batch()` với `with_structured_output` theo schema riêng.
+8. `PolicyAgent` nhận findings của Customer, Order/Product, Payment và Delivery để quyết định `primary_issue`, `secondary_issues`, root cause, refund và actions.
+9. `VerifierAgent` nhận toàn bộ findings và phát hành `CaseOutput` cuối nếu schema/evidence/money/array limits hợp lệ. Nếu Policy hoặc Verifier LLM lỗi, hệ thống dùng deterministic fallback để vẫn tạo output auditable.
+10. Output được ghi vào `output/<case_id>.json`; trace mới nhất ghi vào `logging/trace.jsonl`; metadata ghi vào `logging/metadata.json`.
 
 ## Data Contracts
 

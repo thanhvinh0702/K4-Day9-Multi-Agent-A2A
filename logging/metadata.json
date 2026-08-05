@@ -1,10 +1,25 @@
 {
-  "model": "qwen/qwen-2.5-7b-instruct",
+  "model": "openai/gpt-4o-mini",
   "parameter_size": "<=10B per assignment constraint; verify selected OpenRouter model card",
   "framework": "LangChain",
   "structured_output": {
     "requested_method": "tool_calling",
-    "runtime_method": "function_calling_tool_calling_compat"
+    "runtime_method": "batch_tool_calling"
+  },
+  "multi_agent_llm": {
+    "enabled": true,
+    "mode": "batch",
+    "final_decider": "VerifierAgent",
+    "llm_agent_schemas": [
+      "CustomerFinding",
+      "OrderProductFinding",
+      "PaymentFinding",
+      "DeliveryFinding",
+      "PolicyFinding",
+      "VerificationFinding"
+    ],
+    "final_output_schema": "CaseOutput",
+    "fallback": "Deterministic findings are used only when a batch agent call fails."
   },
   "runtime": {
     "python": "3.12.3",

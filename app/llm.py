@@ -8,7 +8,7 @@ from app.config import get_model_name, get_openrouter_base_url, get_openrouter_k
 from app.schemas import CaseOutput
 
 
-def build_structured_llm() -> tuple[Any | None, str]:
+def build_structured_llm(schema: Any = CaseOutput) -> tuple[Any | None, str]:
     api_key = get_openrouter_key()
     if not api_key:
         return None, "disabled_missing_OPENROUTER_API_KEY"
@@ -22,6 +22,6 @@ def build_structured_llm() -> tuple[Any | None, str]:
         timeout=60,
     )
     try:
-        return llm.with_structured_output(CaseOutput, method="tool_calling"), "tool_calling"
+        return llm.with_structured_output(schema, method="tool_calling"), "tool_calling"
     except ValueError:
-        return llm.with_structured_output(CaseOutput, method="function_calling"), "function_calling_tool_calling_compat"
+        return llm.with_structured_output(schema, method="function_calling"), "function_calling_tool_calling_compat"

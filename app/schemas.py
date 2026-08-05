@@ -133,3 +133,60 @@ class CaseOutput(BaseModel):
     evidence_ids: list[str] = Field(max_length=20)
     financial_resolution: FinancialResolution
     resolution_actions: list[str] = Field(max_length=5)
+
+
+class CustomerFinding(BaseModel):
+    agent_name: Literal["CustomerAgent"] = "CustomerAgent"
+    customer_context: CustomerContext
+    evidence_ids: list[str] = Field(max_length=10)
+    confidence: float = Field(ge=0, le=1)
+    notes: list[str] = Field(max_length=5)
+
+
+class OrderProductFinding(BaseModel):
+    agent_name: Literal["OrderProductAgent"] = "OrderProductAgent"
+    product_context: ProductContext
+    item_ids: list[str] = Field(max_length=5)
+    seller_ids: list[str] = Field(max_length=3)
+    evidence_ids: list[str] = Field(max_length=10)
+    confidence: float = Field(ge=0, le=1)
+    notes: list[str] = Field(max_length=5)
+
+
+class PaymentFinding(BaseModel):
+    agent_name: Literal["PaymentAgent"] = "PaymentAgent"
+    payment_reconciliation: PaymentReconciliation
+    payment_ids: list[str] = Field(max_length=5)
+    evidence_ids: list[str] = Field(max_length=10)
+    confidence: float = Field(ge=0, le=1)
+    notes: list[str] = Field(max_length=5)
+
+
+class DeliveryFinding(BaseModel):
+    agent_name: Literal["DeliveryAgent"] = "DeliveryAgent"
+    delivery_analysis: DeliveryAnalysis
+    evidence_ids: list[str] = Field(max_length=10)
+    confidence: float = Field(ge=0, le=1)
+    notes: list[str] = Field(max_length=5)
+
+
+class PolicyFinding(BaseModel):
+    agent_name: Literal["PolicyAgent"] = "PolicyAgent"
+    case_assessment: CaseAssessment
+    root_cause_analysis: RootCauseAnalysis
+    financial_resolution: FinancialResolution
+    resolution_actions: list[str] = Field(max_length=5)
+    evidence_ids: list[str] = Field(max_length=20)
+    confidence: float = Field(ge=0, le=1)
+    notes: list[str] = Field(max_length=5)
+
+
+class VerificationFinding(BaseModel):
+    agent_name: Literal["VerifierAgent"] = "VerifierAgent"
+    schema_valid: bool
+    evidence_valid: bool
+    money_valid: bool
+    array_limits_valid: bool
+    final_output: CaseOutput
+    confidence: float = Field(ge=0, le=1)
+    notes: list[str] = Field(max_length=5)
