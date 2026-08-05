@@ -1,0 +1,15 @@
+{
+  "model": "qwen/qwen-2.5-7b-instruct",
+  "parameter_size": "<=10B per assignment constraint; verify selected OpenRouter model card",
+  "framework": "LangChain",
+  "structured_output": {
+    "requested_method": "tool_calling",
+    "runtime_method": "function_calling_tool_calling_compat"
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "input_cases": 50,
+    "output_cases": 50,
+    "failures": 0
+  }
+}
