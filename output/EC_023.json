@@ -1,0 +1,94 @@
+{
+  "case_id": "EC_023",
+  "case_assessment": {
+    "primary_issue": "late_delivery_seller",
+    "secondary_issues": [],
+    "case_status": "action_required",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "203096f03d82e0dffbc41ebc2e2bcfb7"
+    ],
+    "item_ids": [
+      "203096f03d82e0dffbc41ebc2e2bcfb7:1"
+    ],
+    "seller_ids": [
+      "633ecdf879b94b5337cca303328e4a25"
+    ],
+    "payment_ids": [
+      "203096f03d82e0dffbc41ebc2e2bcfb7:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "d699688533772c15a061e8ce81cb56df",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "5ac9d9e379c606e36a8094a6046f75dc"
+    ],
+    "category_names": [
+      "beleza_saude"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-10-09 22:23:46",
+    "estimated_delivery_at": "2017-09-28 00:00:00",
+    "carrier_handoff_at": "2017-10-06 17:50:03",
+    "delivery_variance_hours": 286.4,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "633ecdf879b94b5337cca303328e4a25",
+        "shipping_limit_at": "2017-09-25 04:04:09",
+        "handoff_variance_hours": 277.76,
+        "late_handoff": true
+      }
+    ],
+    "late_handoff_seller_ids": [
+      "633ecdf879b94b5337cca303328e4a25"
+    ]
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 109.9,
+    "freight_total_brl": 8.96,
+    "expected_total_brl": 118.86,
+    "payment_total_brl": 118.86,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "boleto"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "SELLER_HANDOFF_AFTER_LIMIT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "seller",
+        "party_id": "633ecdf879b94b5337cca303328e4a25"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:203096f03d82e0dffbc41ebc2e2bcfb7",
+    "item:203096f03d82e0dffbc41ebc2e2bcfb7:1",
+    "payment:203096f03d82e0dffbc41ebc2e2bcfb7:1",
+    "seller:633ecdf879b94b5337cca303328e4a25",
+    "policy:SELLER_HANDOFF_AFTER_LIMIT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 8.96
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_seller_handoff",
+    "verify_refund_completion"
+  ]
+}

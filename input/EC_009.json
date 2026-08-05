@@ -1,0 +1,13 @@
+{
+  "case_id": "EC_009",
+  "customer_request": {
+    "language": "vi",
+    "message": "Yêu cầu đối soát chi tiết chi phí vận chuyển và kiểm tra thời gian bàn giao seller.",
+    "claimed_order_id": "37553832a3a89c9b2db59701c357ca67"
+  },
+  "investigation_scope": {
+    "include_customer_history": true,
+    "include_product_context": true
+  },
+  "policy_version": "EC_POLICY_V2"
+}

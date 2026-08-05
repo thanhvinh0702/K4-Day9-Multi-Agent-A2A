@@ -1,0 +1,94 @@
+{
+  "case_id": "EC_002",
+  "case_assessment": {
+    "primary_issue": "canceled_order_paid",
+    "secondary_issues": [
+      "repeat_customer"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "714fb133a6730ab81fa1d3c1b2007291"
+    ],
+    "item_ids": [
+      "714fb133a6730ab81fa1d3c1b2007291:1"
+    ],
+    "seller_ids": [
+      "95f83f51203c626648c875dd41874c7f"
+    ],
+    "payment_ids": [
+      "714fb133a6730ab81fa1d3c1b2007291:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "c4ebedb09beb89cc0314c5c0c33f8053",
+    "related_order_ids": [
+      "04c3bddd55df58e83123e3b174855489"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "a0b7d5a992ccda646f2d34e418fff5a0"
+    ],
+    "category_names": [
+      "moveis_decoracao"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": null,
+    "estimated_delivery_at": "2018-02-22 00:00:00",
+    "carrier_handoff_at": "2018-01-29 22:33:25",
+    "delivery_variance_hours": null,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "95f83f51203c626648c875dd41874c7f",
+        "shipping_limit_at": "2018-02-01 21:58:39",
+        "handoff_variance_hours": -71.42,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 69.9,
+    "freight_total_brl": 26.11,
+    "expected_total_brl": 96.01,
+    "payment_total_brl": 96.01,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "ORDER_CANCELED_AFTER_PAYMENT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "platform",
+        "party_id": "OLIST_PLATFORM"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:714fb133a6730ab81fa1d3c1b2007291",
+    "item:714fb133a6730ab81fa1d3c1b2007291:1",
+    "payment:714fb133a6730ab81fa1d3c1b2007291:1",
+    "policy:ORDER_CANCELED_AFTER_PAYMENT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 96.01
+  },
+  "resolution_actions": [
+    "issue_full_refund",
+    "verify_refund_completion"
+  ]
+}

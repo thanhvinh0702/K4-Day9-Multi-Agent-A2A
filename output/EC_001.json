@@ -1,0 +1,90 @@
+{
+  "case_id": "EC_001",
+  "case_assessment": {
+    "primary_issue": "canceled_order_paid",
+    "secondary_issues": [],
+    "case_status": "action_required",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "1b9ecfe83cdc259250e1a8aca174f0ad"
+    ],
+    "item_ids": [
+      "1b9ecfe83cdc259250e1a8aca174f0ad:1"
+    ],
+    "seller_ids": [
+      "9646c3513289980f17226a2fc4720dbd"
+    ],
+    "payment_ids": [
+      "1b9ecfe83cdc259250e1a8aca174f0ad:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "8ea097b1824dbd4d17af71b0afe04301",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "ad673c1cd02b966e931f9db4fdc34791"
+    ],
+    "category_names": [
+      "informatica_acessorios"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": null,
+    "estimated_delivery_at": "2018-08-14 00:00:00",
+    "carrier_handoff_at": null,
+    "delivery_variance_hours": null,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "9646c3513289980f17226a2fc4720dbd",
+        "shipping_limit_at": "2018-08-14 04:10:26",
+        "handoff_variance_hours": null,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 25.0,
+    "freight_total_brl": 8.34,
+    "expected_total_brl": 33.34,
+    "payment_total_brl": 33.34,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "boleto"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "ORDER_CANCELED_AFTER_PAYMENT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "platform",
+        "party_id": "OLIST_PLATFORM"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:1b9ecfe83cdc259250e1a8aca174f0ad",
+    "item:1b9ecfe83cdc259250e1a8aca174f0ad:1",
+    "payment:1b9ecfe83cdc259250e1a8aca174f0ad:1",
+    "policy:ORDER_CANCELED_AFTER_PAYMENT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 33.34
+  },
+  "resolution_actions": [
+    "issue_full_refund",
+    "verify_refund_completion"
+  ]
+}

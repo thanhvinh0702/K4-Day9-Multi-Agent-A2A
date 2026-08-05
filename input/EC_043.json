@@ -1,0 +1,13 @@
+{
+  "case_id": "EC_043",
+  "customer_request": {
+    "language": "vi",
+    "message": "Kiểm tra đơn hàng có thanh toán nhiều lần và xác minh khoản tiền khớp hay không.",
+    "claimed_order_id": "6514b8ad8028c9f2cc2374ded245783f"
+  },
+  "investigation_scope": {
+    "include_customer_history": true,
+    "include_product_context": true
+  },
+  "policy_version": "EC_POLICY_V2"
+}

@@ -1,0 +1,89 @@
+{
+  "case_id": "EC_019",
+  "case_assessment": {
+    "primary_issue": "valid_split_payment",
+    "secondary_issues": [
+      "split_payment"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "a03ad7057fae696dd18f8967826c209f"
+    ],
+    "item_ids": [
+      "a03ad7057fae696dd18f8967826c209f:1"
+    ],
+    "seller_ids": [
+      "c68fb906c8f4b4b946d8386bfa6e5467"
+    ],
+    "payment_ids": [
+      "a03ad7057fae696dd18f8967826c209f:2",
+      "a03ad7057fae696dd18f8967826c209f:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "cb644c8c88c4705149fc0c7dd12d596d",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "941fede5c398c3c84cac6e6c832c2b11"
+    ],
+    "category_names": [
+      "utilidades_domesticas"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-06-16 14:04:09",
+    "estimated_delivery_at": "2017-06-28 00:00:00",
+    "carrier_handoff_at": "2017-06-08 16:18:32",
+    "delivery_variance_hours": -273.93,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "c68fb906c8f4b4b946d8386bfa6e5467",
+        "shipping_limit_at": "2017-06-13 19:42:11",
+        "handoff_variance_hours": -123.39,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 52.88,
+    "freight_total_brl": 25.21,
+    "expected_total_brl": 78.09,
+    "payment_total_brl": 78.09,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "voucher",
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "MULTIPLE_PAYMENTS_RECONCILED",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:a03ad7057fae696dd18f8967826c209f",
+    "item:a03ad7057fae696dd18f8967826c209f:1",
+    "payment:a03ad7057fae696dd18f8967826c209f:2",
+    "payment:a03ad7057fae696dd18f8967826c209f:1",
+    "policy:MULTIPLE_PAYMENTS_RECONCILED"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "explain_valid_split_payment"
+  ]
+}

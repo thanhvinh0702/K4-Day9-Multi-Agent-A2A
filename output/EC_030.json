@@ -1,0 +1,91 @@
+{
+  "case_id": "EC_030",
+  "case_assessment": {
+    "primary_issue": "late_delivery_logistics",
+    "secondary_issues": [],
+    "case_status": "action_required",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "a5474c0071dd5d1074e12d417078bbd0"
+    ],
+    "item_ids": [
+      "a5474c0071dd5d1074e12d417078bbd0:1"
+    ],
+    "seller_ids": [
+      "fd386aa7bed2af3c7035c65506c9b4a3"
+    ],
+    "payment_ids": [
+      "a5474c0071dd5d1074e12d417078bbd0:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "0c8761c28faa9b9930e4a9bb545905da",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "1f75be631e988bb0ad750e60e18d043b"
+    ],
+    "category_names": [
+      "beleza_saude"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-08-03 19:28:47",
+    "estimated_delivery_at": "2018-08-02 00:00:00",
+    "carrier_handoff_at": "2018-08-02 10:35:00",
+    "delivery_variance_hours": 43.48,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "fd386aa7bed2af3c7035c65506c9b4a3",
+        "shipping_limit_at": "2018-08-03 02:50:15",
+        "handoff_variance_hours": -16.25,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 13.99,
+    "freight_total_brl": 7.39,
+    "expected_total_brl": 21.38,
+    "payment_total_brl": 21.38,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "boleto"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "CARRIER_DELIVERED_AFTER_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "logistics_provider",
+        "party_id": "LOGISTICS_PROVIDER"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:a5474c0071dd5d1074e12d417078bbd0",
+    "item:a5474c0071dd5d1074e12d417078bbd0:1",
+    "payment:a5474c0071dd5d1074e12d417078bbd0:1",
+    "policy:CARRIER_DELIVERED_AFTER_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 7.39
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_carrier_delay",
+    "verify_refund_completion"
+  ]
+}

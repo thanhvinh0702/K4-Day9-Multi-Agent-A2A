@@ -1,0 +1,13 @@
+{
+  "case_id": "EC_020",
+  "customer_request": {
+    "language": "vi",
+    "message": "Đơn hàng bị hủy nhưng tài khoản đã bị trừ tiền, yêu cầu hoàn tiền full ngay lập tức.",
+    "claimed_order_id": "fd9b8ed51e5ffedf7a56bea36cc5b6f9"
+  },
+  "investigation_scope": {
+    "include_customer_history": true,
+    "include_product_context": true
+  },
+  "policy_version": "EC_POLICY_V2"
+}

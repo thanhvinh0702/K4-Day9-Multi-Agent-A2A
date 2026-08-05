@@ -1,0 +1,91 @@
+{
+  "case_id": "EC_018",
+  "case_assessment": {
+    "primary_issue": "valid_split_payment",
+    "secondary_issues": [
+      "split_payment"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "b2bd1f09c1b8a4a36940f6f6e49d5dec"
+    ],
+    "item_ids": [
+      "b2bd1f09c1b8a4a36940f6f6e49d5dec:1"
+    ],
+    "seller_ids": [
+      "b33e7c55446eabf8fe1a42d037ac7d6d"
+    ],
+    "payment_ids": [
+      "b2bd1f09c1b8a4a36940f6f6e49d5dec:3",
+      "b2bd1f09c1b8a4a36940f6f6e49d5dec:1",
+      "b2bd1f09c1b8a4a36940f6f6e49d5dec:2"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "f1e0cfbcfd9aebd6d003f6667551a9ae",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "eef7436637ac87cad6bf5108284c3413"
+    ],
+    "category_names": [
+      "relogios_presentes"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-02-20 18:09:29",
+    "estimated_delivery_at": "2018-03-07 00:00:00",
+    "carrier_handoff_at": "2018-02-06 01:28:26",
+    "delivery_variance_hours": -341.84,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "b33e7c55446eabf8fe1a42d037ac7d6d",
+        "shipping_limit_at": "2018-02-08 16:31:38",
+        "handoff_variance_hours": -63.05,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 199.0,
+    "freight_total_brl": 16.14,
+    "expected_total_brl": 215.14,
+    "payment_total_brl": 215.14,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "voucher",
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "MULTIPLE_PAYMENTS_RECONCILED",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:b2bd1f09c1b8a4a36940f6f6e49d5dec",
+    "item:b2bd1f09c1b8a4a36940f6f6e49d5dec:1",
+    "payment:b2bd1f09c1b8a4a36940f6f6e49d5dec:3",
+    "payment:b2bd1f09c1b8a4a36940f6f6e49d5dec:1",
+    "payment:b2bd1f09c1b8a4a36940f6f6e49d5dec:2",
+    "policy:MULTIPLE_PAYMENTS_RECONCILED"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "explain_valid_split_payment"
+  ]
+}

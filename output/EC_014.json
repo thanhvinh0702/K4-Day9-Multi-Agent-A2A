@@ -1,0 +1,89 @@
+{
+  "case_id": "EC_014",
+  "case_assessment": {
+    "primary_issue": "valid_split_payment",
+    "secondary_issues": [
+      "split_payment"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "e69bfb5eb88e0ed6a785585b27e16dbf"
+    ],
+    "item_ids": [
+      "e69bfb5eb88e0ed6a785585b27e16dbf:1"
+    ],
+    "seller_ids": [
+      "7c67e1448b00f6e969d365cea6b010ab"
+    ],
+    "payment_ids": [
+      "e69bfb5eb88e0ed6a785585b27e16dbf:2",
+      "e69bfb5eb88e0ed6a785585b27e16dbf:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "299905e3934e9e181bfb2e164dd4b4f8",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "9a78fb9862b10749a117f7fc3c31f051"
+    ],
+    "category_names": [
+      "moveis_escritorio"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-08-16 17:14:30",
+    "estimated_delivery_at": "2017-08-23 00:00:00",
+    "carrier_handoff_at": "2017-08-10 19:45:24",
+    "delivery_variance_hours": -150.76,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "7c67e1448b00f6e969d365cea6b010ab",
+        "shipping_limit_at": "2017-08-11 12:05:32",
+        "handoff_variance_hours": -16.34,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 149.99,
+    "freight_total_brl": 19.77,
+    "expected_total_brl": 169.76,
+    "payment_total_brl": 169.76,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "voucher",
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "MULTIPLE_PAYMENTS_RECONCILED",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:e69bfb5eb88e0ed6a785585b27e16dbf",
+    "item:e69bfb5eb88e0ed6a785585b27e16dbf:1",
+    "payment:e69bfb5eb88e0ed6a785585b27e16dbf:2",
+    "payment:e69bfb5eb88e0ed6a785585b27e16dbf:1",
+    "policy:MULTIPLE_PAYMENTS_RECONCILED"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "explain_valid_split_payment"
+  ]
+}

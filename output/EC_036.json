@@ -1,0 +1,91 @@
+{
+  "case_id": "EC_036",
+  "case_assessment": {
+    "primary_issue": "late_delivery_logistics",
+    "secondary_issues": [],
+    "case_status": "action_required",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "c82a457d646f77c8f151e12a3e517ed2"
+    ],
+    "item_ids": [
+      "c82a457d646f77c8f151e12a3e517ed2:1"
+    ],
+    "seller_ids": [
+      "d9bd94811c3338dceb4181f3dbc0c73e"
+    ],
+    "payment_ids": [
+      "c82a457d646f77c8f151e12a3e517ed2:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "d76441ab4a22e389561144ffafdaa19c",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "81a3f1e46ec16acb4800a5002b014438"
+    ],
+    "category_names": [
+      "perfumaria"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-08-15 15:02:09",
+    "estimated_delivery_at": "2018-08-15 00:00:00",
+    "carrier_handoff_at": "2018-08-10 17:10:00",
+    "delivery_variance_hours": 15.04,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "d9bd94811c3338dceb4181f3dbc0c73e",
+        "shipping_limit_at": "2018-08-12 21:25:20",
+        "handoff_variance_hours": -52.26,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 136.78,
+    "freight_total_brl": 8.22,
+    "expected_total_brl": 145.0,
+    "payment_total_brl": 145.0,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "CARRIER_DELIVERED_AFTER_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "logistics_provider",
+        "party_id": "LOGISTICS_PROVIDER"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:c82a457d646f77c8f151e12a3e517ed2",
+    "item:c82a457d646f77c8f151e12a3e517ed2:1",
+    "payment:c82a457d646f77c8f151e12a3e517ed2:1",
+    "policy:CARRIER_DELIVERED_AFTER_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 8.22
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_carrier_delay",
+    "verify_refund_completion"
+  ]
+}

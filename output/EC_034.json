@@ -1,0 +1,91 @@
+{
+  "case_id": "EC_034",
+  "case_assessment": {
+    "primary_issue": "late_delivery_logistics",
+    "secondary_issues": [],
+    "case_status": "action_required",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "1d067305b599c1e0dceb3864056ea527"
+    ],
+    "item_ids": [
+      "1d067305b599c1e0dceb3864056ea527:1"
+    ],
+    "seller_ids": [
+      "1a3df491d1c4f1589fc2b934ada68bf2"
+    ],
+    "payment_ids": [
+      "1d067305b599c1e0dceb3864056ea527:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "b577af9a54b023b4bcc51f69bb937f1c",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "2a2d22ae30e026f1893083c8405ca522"
+    ],
+    "category_names": [
+      "cama_mesa_banho"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-03-09 21:52:36",
+    "estimated_delivery_at": "2018-03-09 00:00:00",
+    "carrier_handoff_at": "2018-02-20 20:12:57",
+    "delivery_variance_hours": 21.88,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "1a3df491d1c4f1589fc2b934ada68bf2",
+        "shipping_limit_at": "2018-02-22 12:15:38",
+        "handoff_variance_hours": -40.04,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 148.9,
+    "freight_total_brl": 21.53,
+    "expected_total_brl": 170.43,
+    "payment_total_brl": 170.43,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "CARRIER_DELIVERED_AFTER_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "logistics_provider",
+        "party_id": "LOGISTICS_PROVIDER"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:1d067305b599c1e0dceb3864056ea527",
+    "item:1d067305b599c1e0dceb3864056ea527:1",
+    "payment:1d067305b599c1e0dceb3864056ea527:1",
+    "policy:CARRIER_DELIVERED_AFTER_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 21.53
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_carrier_delay",
+    "verify_refund_completion"
+  ]
+}

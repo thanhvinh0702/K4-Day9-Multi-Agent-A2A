@@ -1,0 +1,84 @@
+{
+  "case_id": "EC_042",
+  "case_assessment": {
+    "primary_issue": "unsupported_late_claim",
+    "secondary_issues": [],
+    "case_status": "no_action",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "a4591c265e18cb1dcee52889e2d8acc3"
+    ],
+    "item_ids": [
+      "a4591c265e18cb1dcee52889e2d8acc3:1"
+    ],
+    "seller_ids": [
+      "8581055ce74af1daba164fdbd55a40de"
+    ],
+    "payment_ids": [
+      "a4591c265e18cb1dcee52889e2d8acc3:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "80bb27c7c16e8f973207a5086ab329e2",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "060cb19345d90064d1015407193c233d"
+    ],
+    "category_names": [
+      "automotivo"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-07-26 10:57:55",
+    "estimated_delivery_at": "2017-08-01 00:00:00",
+    "carrier_handoff_at": "2017-07-11 14:58:04",
+    "delivery_variance_hours": -133.03,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "8581055ce74af1daba164fdbd55a40de",
+        "shipping_limit_at": "2017-07-13 22:10:13",
+        "handoff_variance_hours": -55.2,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 147.9,
+    "freight_total_brl": 27.36,
+    "expected_total_brl": 175.26,
+    "payment_total_brl": 175.26,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "DELIVERY_WITHIN_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:a4591c265e18cb1dcee52889e2d8acc3",
+    "item:a4591c265e18cb1dcee52889e2d8acc3:1",
+    "payment:a4591c265e18cb1dcee52889e2d8acc3:1",
+    "policy:DELIVERY_WITHIN_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "reject_late_refund"
+  ]
+}

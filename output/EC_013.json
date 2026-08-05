@@ -1,0 +1,94 @@
+{
+  "case_id": "EC_013",
+  "case_assessment": {
+    "primary_issue": "valid_split_payment",
+    "secondary_issues": [
+      "split_payment",
+      "repeat_customer"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "e481f51cbdc54678b7cc49136f2d6af7"
+    ],
+    "item_ids": [
+      "e481f51cbdc54678b7cc49136f2d6af7:1"
+    ],
+    "seller_ids": [
+      "3504c0cb71d7fa48d967e0e4c94d59d9"
+    ],
+    "payment_ids": [
+      "e481f51cbdc54678b7cc49136f2d6af7:1",
+      "e481f51cbdc54678b7cc49136f2d6af7:3",
+      "e481f51cbdc54678b7cc49136f2d6af7:2"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "7c396fd4830fd04220f754e42b4e5bff",
+    "related_order_ids": [
+      "69923a4e07ce446644394df37a710286"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "87285b34884572647811a353c7ac498a"
+    ],
+    "category_names": [
+      "utilidades_domesticas"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-10-10 21:25:13",
+    "estimated_delivery_at": "2017-10-18 00:00:00",
+    "carrier_handoff_at": "2017-10-04 19:55:00",
+    "delivery_variance_hours": -170.58,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "3504c0cb71d7fa48d967e0e4c94d59d9",
+        "shipping_limit_at": "2017-10-06 11:07:15",
+        "handoff_variance_hours": -39.2,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 29.99,
+    "freight_total_brl": 8.72,
+    "expected_total_brl": 38.71,
+    "payment_total_brl": 38.71,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card",
+      "voucher"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "MULTIPLE_PAYMENTS_RECONCILED",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:e481f51cbdc54678b7cc49136f2d6af7",
+    "item:e481f51cbdc54678b7cc49136f2d6af7:1",
+    "payment:e481f51cbdc54678b7cc49136f2d6af7:1",
+    "payment:e481f51cbdc54678b7cc49136f2d6af7:3",
+    "payment:e481f51cbdc54678b7cc49136f2d6af7:2",
+    "policy:MULTIPLE_PAYMENTS_RECONCILED"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "explain_valid_split_payment"
+  ]
+}

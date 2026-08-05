@@ -1,0 +1,97 @@
+{
+  "case_id": "EC_022",
+  "case_assessment": {
+    "primary_issue": "late_delivery_logistics",
+    "secondary_issues": [
+      "split_payment"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "f31535f21d145b2345e2bf7f09d62322"
+    ],
+    "item_ids": [
+      "f31535f21d145b2345e2bf7f09d62322:1"
+    ],
+    "seller_ids": [
+      "91f0eec23d4a61d7d7caeefa3f0ad1ca"
+    ],
+    "payment_ids": [
+      "f31535f21d145b2345e2bf7f09d62322:2",
+      "f31535f21d145b2345e2bf7f09d62322:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "51ac8560948d44d4ffa33f2680569a20",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "f196248e8b5d060cca414a664ea9a76f"
+    ],
+    "category_names": [
+      "automotivo"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-04-23 15:49:34",
+    "estimated_delivery_at": "2018-03-05 00:00:00",
+    "carrier_handoff_at": "2018-02-02 00:24:34",
+    "delivery_variance_hours": 1191.83,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "91f0eec23d4a61d7d7caeefa3f0ad1ca",
+        "shipping_limit_at": "2018-02-08 08:10:31",
+        "handoff_variance_hours": -151.77,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 199.0,
+    "freight_total_brl": 24.26,
+    "expected_total_brl": 223.26,
+    "payment_total_brl": 223.26,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "voucher",
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "CARRIER_DELIVERED_AFTER_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "logistics_provider",
+        "party_id": "LOGISTICS_PROVIDER"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:f31535f21d145b2345e2bf7f09d62322",
+    "item:f31535f21d145b2345e2bf7f09d62322:1",
+    "payment:f31535f21d145b2345e2bf7f09d62322:2",
+    "payment:f31535f21d145b2345e2bf7f09d62322:1",
+    "policy:CARRIER_DELIVERED_AFTER_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 24.26
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_carrier_delay",
+    "verify_refund_completion",
+    "verify_payment_allocation"
+  ]
+}

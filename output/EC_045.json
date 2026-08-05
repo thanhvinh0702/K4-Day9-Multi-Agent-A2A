@@ -1,0 +1,88 @@
+{
+  "case_id": "EC_045",
+  "case_assessment": {
+    "primary_issue": "unsupported_late_claim",
+    "secondary_issues": [
+      "multi_item_order"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.95
+  },
+  "affected_entities": {
+    "order_ids": [
+      "e6ce16cb79ec1d90b1da9085a6118aeb"
+    ],
+    "item_ids": [
+      "e6ce16cb79ec1d90b1da9085a6118aeb:1",
+      "e6ce16cb79ec1d90b1da9085a6118aeb:2"
+    ],
+    "seller_ids": [
+      "001cca7ae9ae17fb1caed9dfb1094831"
+    ],
+    "payment_ids": [
+      "e6ce16cb79ec1d90b1da9085a6118aeb:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "f2a85dec752b8517b5e58a06ff3cd937",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "08574b074924071f4e201e151b152b4e"
+    ],
+    "category_names": [
+      "ferramentas_jardim"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-05-29 11:18:31",
+    "estimated_delivery_at": "2017-06-07 00:00:00",
+    "carrier_handoff_at": "2017-05-18 11:40:40",
+    "delivery_variance_hours": -204.69,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "001cca7ae9ae17fb1caed9dfb1094831",
+        "shipping_limit_at": "2017-05-22 19:50:18",
+        "handoff_variance_hours": -104.16,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 198.0,
+    "freight_total_brl": 61.06,
+    "expected_total_brl": 259.06,
+    "payment_total_brl": 259.06,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "DELIVERY_WITHIN_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:e6ce16cb79ec1d90b1da9085a6118aeb",
+    "item:e6ce16cb79ec1d90b1da9085a6118aeb:1",
+    "item:e6ce16cb79ec1d90b1da9085a6118aeb:2",
+    "payment:e6ce16cb79ec1d90b1da9085a6118aeb:1",
+    "policy:DELIVERY_WITHIN_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "reject_late_refund"
+  ]
+}
