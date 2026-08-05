@@ -1,0 +1,88 @@
+{
+  "case_id": "EC_050",
+  "case_assessment": {
+    "primary_issue": "unsupported_late_claim",
+    "secondary_issues": [
+      "repeat_customer"
+    ],
+    "case_status": "no_action",
+    "confidence": 1.0
+  },
+  "affected_entities": {
+    "order_ids": [
+      "dcb36b511fcac050b97cd5c05de84dc3"
+    ],
+    "item_ids": [
+      "dcb36b511fcac050b97cd5c05de84dc3:1"
+    ],
+    "seller_ids": [
+      "89a51f50b8095ea78d5768f34c13a76f"
+    ],
+    "payment_ids": [
+      "dcb36b511fcac050b97cd5c05de84dc3:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "ccafc1c3f270410521c3c6f3b249870f",
+    "related_order_ids": [
+      "3d58fd1ee438a43f2a826dda6b013519"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "009c09f439988bc06a93d6b8186dce73"
+    ],
+    "category_names": [
+      "perfumaria"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-06-21 15:34:32",
+    "estimated_delivery_at": "2018-07-04 00:00:00",
+    "carrier_handoff_at": "2018-06-11 14:54:00",
+    "delivery_variance_hours": -296.42,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "89a51f50b8095ea78d5768f34c13a76f",
+        "shipping_limit_at": "2018-06-18 18:59:02",
+        "handoff_variance_hours": -172.08,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 132.4,
+    "freight_total_brl": 14.05,
+    "expected_total_brl": 146.45,
+    "payment_total_brl": 146.45,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "DELIVERY_WITHIN_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:dcb36b511fcac050b97cd5c05de84dc3",
+    "item:dcb36b511fcac050b97cd5c05de84dc3:1",
+    "payment:dcb36b511fcac050b97cd5c05de84dc3:1",
+    "policy:DELIVERY_WITHIN_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "reject_late_refund"
+  ]
+}

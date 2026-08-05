@@ -1,0 +1,94 @@
+{
+  "case_id": "EC_026",
+  "case_assessment": {
+    "primary_issue": "late_delivery_seller",
+    "secondary_issues": [],
+    "case_status": "action_required",
+    "confidence": 0.9
+  },
+  "affected_entities": {
+    "order_ids": [
+      "6ea2f835b4556291ffdc53fa0b3b95e8"
+    ],
+    "item_ids": [
+      "6ea2f835b4556291ffdc53fa0b3b95e8:1"
+    ],
+    "seller_ids": [
+      "f5f46307a4d15880ca14fab4ad9dfc9b"
+    ],
+    "payment_ids": [
+      "6ea2f835b4556291ffdc53fa0b3b95e8:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "3e4fd73f1e86b135b9b121d6abbe9597",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "be021417a6acb56b9b50d3fd2714baa8"
+    ],
+    "category_names": [
+      "utilidades_domesticas"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-12-28 18:59:23",
+    "estimated_delivery_at": "2017-12-21 00:00:00",
+    "carrier_handoff_at": "2017-12-13 21:14:05",
+    "delivery_variance_hours": 186.99,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "f5f46307a4d15880ca14fab4ad9dfc9b",
+        "shipping_limit_at": "2017-11-30 00:21:09",
+        "handoff_variance_hours": 332.88,
+        "late_handoff": true
+      }
+    ],
+    "late_handoff_seller_ids": [
+      "f5f46307a4d15880ca14fab4ad9dfc9b"
+    ]
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 339.0,
+    "freight_total_brl": 17.12,
+    "expected_total_brl": 356.12,
+    "payment_total_brl": 356.12,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "SELLER_HANDOFF_AFTER_LIMIT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "seller",
+        "party_id": "f5f46307a4d15880ca14fab4ad9dfc9b"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:6ea2f835b4556291ffdc53fa0b3b95e8",
+    "item:6ea2f835b4556291ffdc53fa0b3b95e8:1",
+    "payment:6ea2f835b4556291ffdc53fa0b3b95e8:1",
+    "seller:f5f46307a4d15880ca14fab4ad9dfc9b",
+    "policy:SELLER_HANDOFF_AFTER_LIMIT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 17.12
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_seller_handoff",
+    "verify_refund_completion"
+  ]
+}

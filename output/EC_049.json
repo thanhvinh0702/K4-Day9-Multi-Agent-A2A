@@ -1,0 +1,84 @@
+{
+  "case_id": "EC_049",
+  "case_assessment": {
+    "primary_issue": "unsupported_late_claim",
+    "secondary_issues": [],
+    "case_status": "no_action",
+    "confidence": 1.0
+  },
+  "affected_entities": {
+    "order_ids": [
+      "432aaf21d85167c2c86ec9448c4e42cc"
+    ],
+    "item_ids": [
+      "432aaf21d85167c2c86ec9448c4e42cc:1"
+    ],
+    "seller_ids": [
+      "0bae85eb84b9fb3bd773911e89288d54"
+    ],
+    "payment_ids": [
+      "432aaf21d85167c2c86ec9448c4e42cc:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "04cf8185c71090d28baa4407b2e6d600",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "72d3bf1d3a790f8874096fcf860e3eff"
+    ],
+    "category_names": [
+      "brinquedos"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-03-12 23:36:26",
+    "estimated_delivery_at": "2018-03-21 00:00:00",
+    "carrier_handoff_at": "2018-03-02 21:09:20",
+    "delivery_variance_hours": -192.39,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "0bae85eb84b9fb3bd773911e89288d54",
+        "shipping_limit_at": "2018-03-07 15:10:47",
+        "handoff_variance_hours": -114.02,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 38.25,
+    "freight_total_brl": 16.11,
+    "expected_total_brl": 54.36,
+    "payment_total_brl": 54.36,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "DELIVERY_WITHIN_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:432aaf21d85167c2c86ec9448c4e42cc",
+    "item:432aaf21d85167c2c86ec9448c4e42cc:1",
+    "payment:432aaf21d85167c2c86ec9448c4e42cc:1",
+    "policy:DELIVERY_WITHIN_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "reject_late_refund"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "case_id": "EC_002",
+  "customer_request": {
+    "language": "vi",
+    "message": "Khách hàng báo chưa nhận được hàng đúng hẹn, đề nghị làm rõ trách nhiệm đơn vị vận chuyển hoặc người bán.",
+    "claimed_order_id": "714fb133a6730ab81fa1d3c1b2007291"
+  },
+  "investigation_scope": {
+    "include_customer_history": true,
+    "include_product_context": true
+  },
+  "policy_version": "EC_POLICY_V2"
+}

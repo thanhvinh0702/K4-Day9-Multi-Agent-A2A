@@ -1,0 +1,84 @@
+{
+  "case_id": "EC_038",
+  "case_assessment": {
+    "primary_issue": "unsupported_late_claim",
+    "secondary_issues": [],
+    "case_status": "no_action",
+    "confidence": 1.0
+  },
+  "affected_entities": {
+    "order_ids": [
+      "53cdb2fc8bc7dce0b6741e2150273451"
+    ],
+    "item_ids": [
+      "53cdb2fc8bc7dce0b6741e2150273451:1"
+    ],
+    "seller_ids": [
+      "289cdb325fb7e7f891c38608bf9e0962"
+    ],
+    "payment_ids": [
+      "53cdb2fc8bc7dce0b6741e2150273451:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "af07308b275d755c9edb36a90c618231",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "595fac2a385ac33a80bd5114aec74eb8"
+    ],
+    "category_names": [
+      "perfumaria"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-08-07 15:27:45",
+    "estimated_delivery_at": "2018-08-13 00:00:00",
+    "carrier_handoff_at": "2018-07-26 14:31:00",
+    "delivery_variance_hours": -128.54,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "289cdb325fb7e7f891c38608bf9e0962",
+        "shipping_limit_at": "2018-07-30 03:24:27",
+        "handoff_variance_hours": -84.89,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 118.7,
+    "freight_total_brl": 22.76,
+    "expected_total_brl": 141.46,
+    "payment_total_brl": 141.46,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "boleto"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "DELIVERY_WITHIN_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:53cdb2fc8bc7dce0b6741e2150273451",
+    "item:53cdb2fc8bc7dce0b6741e2150273451:1",
+    "payment:53cdb2fc8bc7dce0b6741e2150273451:1",
+    "policy:DELIVERY_WITHIN_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "reject_late_refund"
+  ]
+}

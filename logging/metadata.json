@@ -1,0 +1,9 @@
+{
+  "model": "llama-3.1-8b-instant",
+  "parameter_size": "8B",
+  "provider": "Groq",
+  "framework": "Custom Hybrid Deterministic-Rule + LLM-Verified Multi-Agent System (Python)",
+  "runtime": "Python 3.13",
+  "total_cases_processed": 50,
+  "policy_version": "EC_POLICY_V2"
+}

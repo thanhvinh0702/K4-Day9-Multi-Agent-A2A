@@ -1,0 +1,89 @@
+{
+  "case_id": "EC_020",
+  "case_assessment": {
+    "primary_issue": "valid_split_payment",
+    "secondary_issues": [
+      "split_payment"
+    ],
+    "case_status": "no_action",
+    "confidence": 1.0
+  },
+  "affected_entities": {
+    "order_ids": [
+      "fd9b8ed51e5ffedf7a56bea36cc5b6f9"
+    ],
+    "item_ids": [
+      "fd9b8ed51e5ffedf7a56bea36cc5b6f9:1"
+    ],
+    "seller_ids": [
+      "fa1a9dec3a9940c072684a46728bf1fc"
+    ],
+    "payment_ids": [
+      "fd9b8ed51e5ffedf7a56bea36cc5b6f9:1",
+      "fd9b8ed51e5ffedf7a56bea36cc5b6f9:2"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "b8c64934a84e5ac575aaf1c5d50f340e",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "0ef8c1b31d81d6b4453f70a61321f73e"
+    ],
+    "category_names": [
+      "pet_shop"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-04-19 18:03:46",
+    "estimated_delivery_at": "2018-04-27 00:00:00",
+    "carrier_handoff_at": "2018-04-04 20:04:05",
+    "delivery_variance_hours": -173.94,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "fa1a9dec3a9940c072684a46728bf1fc",
+        "shipping_limit_at": "2018-04-04 23:26:57",
+        "handoff_variance_hours": -3.38,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 119.9,
+    "freight_total_brl": 23.42,
+    "expected_total_brl": 143.32,
+    "payment_total_brl": 143.32,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card",
+      "voucher"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "MULTIPLE_PAYMENTS_RECONCILED",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:fd9b8ed51e5ffedf7a56bea36cc5b6f9",
+    "item:fd9b8ed51e5ffedf7a56bea36cc5b6f9:1",
+    "payment:fd9b8ed51e5ffedf7a56bea36cc5b6f9:1",
+    "payment:fd9b8ed51e5ffedf7a56bea36cc5b6f9:2",
+    "policy:MULTIPLE_PAYMENTS_RECONCILED"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "explain_valid_split_payment"
+  ]
+}

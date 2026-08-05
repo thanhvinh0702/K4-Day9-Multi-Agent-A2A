@@ -1,0 +1,91 @@
+{
+  "case_id": "EC_025",
+  "case_assessment": {
+    "primary_issue": "late_delivery_logistics",
+    "secondary_issues": [],
+    "case_status": "action_required",
+    "confidence": 0.9
+  },
+  "affected_entities": {
+    "order_ids": [
+      "8563039e855156e48fccee4d611a3196"
+    ],
+    "item_ids": [
+      "8563039e855156e48fccee4d611a3196:1"
+    ],
+    "seller_ids": [
+      "955fee9216a65b617aa5c0531780ce60"
+    ],
+    "payment_ids": [
+      "8563039e855156e48fccee4d611a3196:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "92fd8aa5948e20c43a014c44c025c5e1",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "bff2010b28e8fbcff5a9db9d3fea5ac4"
+    ],
+    "category_names": [
+      "ferramentas_jardim"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-03-20 00:59:25",
+    "estimated_delivery_at": "2018-03-20 00:00:00",
+    "carrier_handoff_at": "2018-02-20 23:03:56",
+    "delivery_variance_hours": 0.99,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "955fee9216a65b617aa5c0531780ce60",
+        "shipping_limit_at": "2018-02-22 15:15:34",
+        "handoff_variance_hours": -40.19,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 78.0,
+    "freight_total_brl": 28.95,
+    "expected_total_brl": 106.95,
+    "payment_total_brl": 106.95,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "CARRIER_DELIVERED_AFTER_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "logistics_provider",
+        "party_id": "LOGISTICS_PROVIDER"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:8563039e855156e48fccee4d611a3196",
+    "item:8563039e855156e48fccee4d611a3196:1",
+    "payment:8563039e855156e48fccee4d611a3196:1",
+    "policy:CARRIER_DELIVERED_AFTER_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 28.95
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_carrier_delay",
+    "verify_refund_completion"
+  ]
+}
