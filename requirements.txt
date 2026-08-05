@@ -1,2 +1,4 @@
-# No third-party dependencies. Python 3.10+ is sufficient.
+tqdm>=4.66,<5
 
+# Python 3.10+ is sufficient. OpenRouter is called through the
+# standard-library HTTPS client, so no provider SDK is required.

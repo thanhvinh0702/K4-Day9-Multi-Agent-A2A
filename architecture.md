@@ -1,88 +1,192 @@
-# Kiến trúc Multi-Agent E-commerce Dispute Resolution
+# Architecture — Multi-Agent E-commerce Dispute Resolution
 
-## 1. Mục tiêu và nguyên tắc
-
-Hệ thống xử lý độc lập 50 case khiếu nại Olist theo `EC_POLICY_V2`. Kết quả phải tái lập được, chỉ dùng bằng chứng tồn tại trong CSV và không suy diễn tracking, refund ledger hay sự kiện giao sai/giao thiếu.
-
-Các agent trong bài là các software agent có vai trò, contract và handoff tách biệt. Phiên bản hiện tại không dùng LLM: join, phép tính và quyết định policy được thực hiện bằng Python deterministic. Vì vậy giới hạn model không quá 10B được đáp ứng và không cần API key.
-
-## 2. Sơ đồ agent
+## 1. Sơ đồ tổng thể
 
 ```text
-EC_*.json
-    |
-    v
-Coordinator Agent
-    |-- request --> Customer Agent ----------- customer/history facts ---|
-    |-- request --> Order & Product Agent ---- item/seller/product facts -|
-    |                                             |
-    |                                             v
-    |                                       Payment Agent
-    |                                             |
-    |-- request --> Delivery Agent ---------------| reconciliation/delivery
-    |                                             v
-    |                                        Policy Agent
-    |                                             |
-    |                                       policy decision
-    |                                             v
-    |<--------------------------------------- Coordinator
-    |                                             |
-    |                                             v
-    |                                        Verifier Agent
-    |                                             |
-    v                                             v
-output/EC_*.json                           logging/trace.jsonl
+Coordinator (`main` + `resolve_case`)
+    │
+    ├── Order & Seller Agent ──┐
+    ├── Payment Agent ─────────┼──> immutable CaseFactBundle
+    └── Delivery Agent ────────┘              │
+                                  ┌───────────┴───────────┐
+                                  v                       v
+                      Deterministic Policy       OpenRouter Policy
+                                  └───────────┬───────────┘
+                                              v
+                                      Policy Comparator
+                                              │
+                                              v
+                                      Exact Verifier Agent
+                                              │
+                         JSON output + trace + metadata + ZIP
 ```
 
-## 3. Vai trò và quyền truy cập
+Hệ thống dùng kiến trúc hybrid. Các phép join, tiền, thời gian và policy chính thức chạy deterministic. OpenRouter là một policy reviewer độc lập; LLM chỉ được cung cấp facts đã tính và không có quyền ghi đè quyết định nghiệp vụ.
 
-| Agent | Trách nhiệm | Dữ liệu được đọc | Output handoff |
-|---|---|---|---|
-| Coordinator | Nhận case, gọi agent, ghép schema và ghi output | Input case, kết quả agent | Output candidate |
-| Customer | Xác định `customer_unique_id` và lịch sử order | Orders, customers | Customer facts |
-| Order & Product | Lấy item, seller, product, category, tổng item/freight và shipping limit | Orders, items, products, sellers | Order/product facts |
-| Payment | Tổng hợp payment row và đối soát | Payments và order facts | Payment facts |
-| Delivery | Tính delivery/handoff variance | Order timestamps và shipping limits | Delivery facts |
-| Policy | Áp dụng thứ tự ưu tiên `EC_POLICY_V2` | Tất cả domain facts | Issue, party, cause, refund, actions |
-| Verifier | Kiểm tra schema, ID, evidence, null và giới hạn | Output candidate và data index | Pass hoặc lỗi có nguyên nhân |
+## 2. Coordinator
 
-Chỉ `Coordinator` ghi file output. Các domain agent chỉ đọc datastore. `TraceWriter` ghi một event cho từng handoff và ghi đè trace ở mỗi lượt chạy.
+Coordinator không phải class.
 
-## 4. Contract chính
+- `src/main.py::main()` nạp `.env`, cấu hình, CSV, duyệt input bằng `tqdm`, ghi JSON, metadata và ZIP.
+- `src/resolver.py::resolve_case()` khởi tạo các agent và điều phối đúng một case.
 
-Các handoff dùng dictionary chỉ chứa fact đã được tính, không truyền prompt tự do:
+Luồng `resolve_case()`:
 
-- Customer facts: customer unique ID, tối đa 5 related order và cờ repeat customer.
-- Order facts: source-ordered item/seller/product/category, tiền dạng `Decimal`, shipping limit sớm nhất theo seller.
-- Payment facts: payment rows, tổng payment, expected total, difference và reconciled.
-- Delivery facts: timestamp gốc, variance hai chữ số, late seller IDs.
-- Policy decision: primary/secondary issue, root cause, responsible party, refund và ordered actions.
+1. Kiểm tra `policy_version` và claimed order.
+2. Giao task và chạy ba domain agent độc lập bằng thread pool.
+3. Ghép kết quả thành `CaseFactBundle` frozen.
+4. Gửi cùng một fact bundle cho hai policy branch độc lập.
+5. Comparator normalize hai quyết định.
+6. Verifier tự dựng lại expected facts từ CSV và exact-check output.
+7. Ghi vào staging; chỉ commit JSON/trace/metadata/ZIP sau khi toàn batch pass.
 
-Thứ tự mảng được giữ theo lần xuất hiện đầu tiên trong CSV. Chỉ secondary issues và actions dùng thứ tự nghiệp vụ trong README.
+Customer history được tra deterministic trong `resolve_case()` bằng `customer_unique_id`. Product/category context được thu thập trong Order & Seller Agent để vẫn đáp ứng output schema mà không tạo thêm agent ngoài kiến trúc.
 
-## 5. Luồng xử lý
+## 3. OrderSellerAgent
 
-1. Coordinator kiểm tra `policy_version` và order có tồn tại.
-2. Customer và Order/Product Agent tra cứu các domain độc lập.
-3. Payment Agent nhận item/freight totals để đối soát payment.
-4. Delivery Agent nhận shipping limit theo seller để tính handoff.
-5. Policy Agent xét primary issue đúng thứ tự ưu tiên, sau đó thêm secondary issues và actions.
-6. Coordinator tạo evidence từ order/item/payment, seller chịu trách nhiệm (nếu có) và policy code.
-7. Verifier đối chiếu ID ngược lại datastore, kiểm tra null/limit/status.
-8. Chỉ output đã pass verifier mới được ghi ra JSON.
+File: `src/agents/order_seller_agent.py`.
 
-## 6. Xử lý dữ liệu và sai số
+Agent đọc order status, item, seller, product và category. Với từng item, agent so sánh trực tiếp:
 
-- Tiền được cộng bằng `Decimal`, làm tròn `ROUND_HALF_UP` tới 0.01 BRL.
-- Timestamp được parse trực tiếp theo giá trị CSV, không đổi múi giờ.
-- Variance được tính theo tổng số giây chia 3600 và làm tròn hai chữ số.
-- Order không có item trả `expected_total_brl`, `difference_brl`, `reconciled` là `null`; các mảng item/seller/product/category rỗng.
-- `customer_id` chỉ nối order hiện tại; lịch sử khách hàng dùng `customer_unique_id`.
+```text
+order_delivered_carrier_date > item.shipping_limit_date
+```
 
-## 7. Audit và khả năng tái lập
+Kết quả handoff gồm:
 
-- `logging/trace.jsonl`: handoff thật của lượt chạy mới nhất, không append.
-- `logging/metadata.json`: model, framework, runtime, policy và số case.
-- Mỗi output đi qua cùng một pipeline và verifier.
-- Pipeline chỉ dùng Python standard library, không cần mạng hoặc secret.
+- `order_status`;
+- item IDs và seller IDs theo thứ tự nguồn;
+- `late_handoff_item_ids`;
+- `late_handoff_seller_ids`;
+- seller handoff analysis;
+- product/category context và các cờ multi-item/multi-seller/multiple-category.
 
+Policy seller delay dùng so sánh item-level. Output delivery dùng shipping limit sớm nhất của mỗi seller để tạo một record ổn định cho seller đó.
+
+## 4. PaymentAgent
+
+File: `src/agents/payment_agent.py`.
+
+Agent chỉ nhận `order_id` và tự đọc item/payment từ datastore. Nó không phụ thuộc output của OrderSellerAgent, vì vậy ba domain branch có thể thực thi độc lập.
+
+Agent tính bằng `Decimal`:
+
+```text
+item_total_brl     = sum(item.price)
+freight_total_brl  = sum(item.freight_value)
+expected_total_brl = item_total_brl + freight_total_brl
+payment_total_brl  = sum(payment.payment_value)
+difference_brl     = payment_total_brl - expected_total_brl
+reconciled         = abs(difference_brl) <= 0.10
+```
+
+Tiền được làm tròn hai chữ số bằng `ROUND_HALF_UP`. `payment_installments` không được nhân vào `payment_value`. Nếu order không có item, `expected_total_brl`, `difference_brl` và `reconciled` là `null`.
+
+## 5. DeliveryAgent
+
+File: `src/agents/delivery_agent.py`.
+
+Agent so sánh:
+
+```text
+order_delivered_customer_date
+    với
+order_estimated_delivery_date
+```
+
+Handoff có hai cờ loại trừ nhau khi đủ timestamp:
+
+- `delivered_late`;
+- `delivered_within_estimate`.
+
+Phân loại dùng timestamp gốc; `delivery_variance_hours` chỉ được làm tròn khi đưa ra output.
+
+## 6. DeterministicPolicyAgent
+
+File: `src/policy.py`.
+
+Policy engine áp dụng rule đúng thứ tự:
+
+1. `canceled_order_paid`;
+2. `unavailable_order_paid`;
+3. `late_delivery_seller`;
+4. `late_delivery_logistics`;
+5. `valid_split_payment`;
+6. `unsupported_late_claim`.
+
+Kết quả gồm `primary_issue`, secondary issues, `cause_code`, responsible parties, refund, ordered actions, case status và confidence mặc định `1.0`. Đây là nguồn quyết định nghiệp vụ có thẩm quyền.
+
+## 7. OpenRouterPolicyAgent
+
+Files: `src/openrouter_policy.py` và `src/llm.py`.
+
+Đây là thành phần LLM duy nhất. Mỗi case gọi tối đa một request tới OpenRouter Chat Completions API:
+
+- model mặc định `qwen/qwen-2.5-7b-instruct`;
+- có thể đổi qua `OPENROUTER_MODEL`;
+- `temperature = 0`;
+- response dùng JSON Schema;
+- chỉ nhận computed facts, không nhận toàn bộ CSV/raw rows;
+- không nhận deterministic decision làm câu trả lời mẫu.
+
+Contract LLM:
+
+```json
+{
+  "primary_issue": "late_delivery_seller",
+  "cause_code": "SELLER_HANDOFF_AFTER_LIMIT",
+  "responsible_parties": [
+    {"party_type": "seller", "party_id": "<seller_id>"}
+  ],
+  "recommended_refund_brl": 18.27,
+  "primary_action": "refund_freight",
+  "confidence": 0.95
+}
+```
+
+Nếu thiếu key, tắt LLM, timeout, HTTP error hoặc JSON sai schema, `OpenRouterPolicyAgent` trả fallback thay vì làm pipeline dừng.
+
+## 8. VerifierAgent và normalize
+
+File: `src/verifier.py`.
+
+`normalize_llm_decision()` so sánh toàn bộ business contract:
+
+- `primary_issue`;
+- `cause_code`;
+- toàn bộ `responsible_parties` theo thứ tự;
+- `recommended_refund_brl`;
+- action chính.
+
+Nếu bất kỳ field nào khác deterministic result, toàn bộ business decision dùng deterministic result, kể cả confidence mặc định. Nếu tất cả khớp, chỉ confidence của LLM được nhận và clamp vào `[0, 1]`.
+
+`VerifierAgent.build_output()`:
+
+1. Tạo JSON cuối từ facts và normalized decision.
+2. Kiểm tra exact schema keys và giới hạn array.
+3. Tự tính lại item/payment/seller/product/customer/delivery từ CSV.
+4. Exact-check affected IDs, context, secondary issues, policy, parties, refund, actions và evidence; thiếu một ID cũng fail.
+5. Kiểm tra null, timestamp, confidence và cấm NaN/Infinity.
+6. Chỉ trả output nếu mọi hard check đều pass.
+
+## 9. Trace, metadata và ZIP
+
+- `logging/trace.jsonl` chứa đủ ba task assignment, ba result handoff, hai policy branch, comparator và verifier result. Không chứa API key.
+- `logging/metadata.json` ghi model, provider, số call, token usage, số LLM match và số fallback.
+- `output/EC_001.json` đến `output/EC_050.json` là output chấm điểm.
+- `output.zip` được tự động tạo khi chạy toàn bộ input, chứa các JSON ở root ZIP và không chứa source/log/secret.
+- `--case EC_001` chỉ chạy thử một case và không ghi đè ZIP nộp bài.
+- `--no-llm` dùng để regression offline; pipeline vẫn chạy hoàn toàn bằng deterministic policy.
+- Mọi artifact được tạo trong thư mục staging. Nếu một case fail, output/trace/metadata/ZIP của lượt chạy trước được giữ nguyên.
+
+## 10. Failure policy
+
+```text
+Domain calculation error  -> dừng case, không ghi output sai
+Deterministic policy error -> dừng case, không ghi output sai
+OpenRouter error          -> trace fallback, tiếp tục deterministic
+LLM business mismatch     -> trace mismatch, dùng deterministic
+Verifier error            -> dừng case, không ghi output sai
+```
+
+Thiết kế bảo đảm OpenRouter giúp tạo một policy proposal độc lập nhưng correctness cuối cùng luôn được kiểm soát bằng dữ liệu và rule có thể kiểm chứng.

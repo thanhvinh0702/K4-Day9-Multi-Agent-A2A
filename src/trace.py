@@ -28,6 +28,28 @@ class TraceWriter:
         self.handle.write(json.dumps(event, ensure_ascii=False) + "\n")
         self.handle.flush()
 
+    def policy_comparison(
+        self,
+        case_id: str,
+        deterministic: dict[str, Any],
+        llm_decision: dict[str, Any] | None,
+        matched: bool,
+        fallback_reason: str | None,
+    ) -> None:
+        """Record LLM-versus-code comparison without credentials or raw data."""
+        event = {
+            "case_id": case_id,
+            "agent": "openrouter_policy_agent",
+            "event": "policy_comparison",
+            "deterministic_primary_issue": deterministic["primary_issue"],
+            "llm_decision": llm_decision,
+            "matched": matched,
+            "decision_source": "llm_confidence_only" if matched else "deterministic",
+            "fallback_reason": fallback_reason,
+        }
+        self.handle.write(json.dumps(event, ensure_ascii=False) + "\n")
+        self.handle.flush()
+
     def close(self) -> None:
         self.handle.close()
 
@@ -36,4 +58,3 @@ class TraceWriter:
 
     def __exit__(self, *_: object) -> None:
         self.close()
-

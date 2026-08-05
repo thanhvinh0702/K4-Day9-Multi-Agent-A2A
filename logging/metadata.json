@@ -1,8 +1,19 @@
 {
-  "model": "none-deterministic-rules",
-  "parameter_size": "N/A",
-  "framework": "custom-python-multi-agent",
+  "model": "qwen/qwen-2.5-7b-instruct",
+  "parameter_size": "7B",
+  "provider": "OpenRouter",
+  "framework": "deterministic-openrouter-policy-multi-agent",
   "runtime": "Python standard library",
   "policy_version": "EC_POLICY_V2",
-  "case_count": 50
+  "case_count": 50,
+  "llm_requested": true,
+  "llm_enabled": true,
+  "llm_calls": 50,
+  "llm_policy_matches": 6,
+  "llm_fallbacks": 44,
+  "llm_request_failures": 0,
+  "llm_policy_mismatches": 44,
+  "llm_unavailable_cases": 0,
+  "prompt_tokens": 20413,
+  "completion_tokens": 4103
 }
