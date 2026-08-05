@@ -1,0 +1,100 @@
+{"case_id": "EC_001", "order_id": "9b75cdaf2d85857ef023980e15d01546", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unsupported_late_claim"}
+{"case_id": "EC_001", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_002", "order_id": "eb09635680fadffb33358e40b05c9029", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_seller"}
+{"case_id": "EC_002", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_003", "order_id": "6c1798a95735e69db81fe92f8c40bdb4", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_logistics"}
+{"case_id": "EC_003", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_004", "order_id": "5d9c5817e278892b7498d90bfa28ade8", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "canceled_order_paid"}
+{"case_id": "EC_004", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_005", "order_id": "3a20bcc250e5404ca717dfa90e8a9c05", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_logistics"}
+{"case_id": "EC_005", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_006", "order_id": "0e4a4de1d15b6df8d4335fb2db61667a", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_seller"}
+{"case_id": "EC_006", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_007", "order_id": "cf788ee4258fde5130bb5651bda63918", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_logistics"}
+{"case_id": "EC_007", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_008", "order_id": "23c312ca9f0242a48a95e5643bee2645", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "valid_split_payment"}
+{"case_id": "EC_008", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_009", "order_id": "6683aa4f73f7869ec65ebeeef53f700b", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "canceled_order_paid"}
+{"case_id": "EC_009", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_010", "order_id": "919baca007d9525b6668c18f79a33197", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "valid_split_payment"}
+{"case_id": "EC_010", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_011", "order_id": "113e41a438f06ffae6d1857e01d60c45", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "canceled_order_paid"}
+{"case_id": "EC_011", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_012", "order_id": "73628c6d02ed8f6134d9752cd7b83c2a", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unavailable_order_paid"}
+{"case_id": "EC_012", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_013", "order_id": "97e8d3eb8f48e3610beed991e5f32296", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_seller"}
+{"case_id": "EC_013", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_014", "order_id": "f938fa004452c776198a593e5fb9056d", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_logistics"}
+{"case_id": "EC_014", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_015", "order_id": "ccec592b58e122dc2bfc2305152d9603", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "valid_split_payment"}
+{"case_id": "EC_015", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_016", "order_id": "9c9353e8fd52f68f8442e580b5f2bba6", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_logistics"}
+{"case_id": "EC_016", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_017", "order_id": "3c5939ce763419f5942f27acffd072e6", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_logistics"}
+{"case_id": "EC_017", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_018", "order_id": "f396e1280028fa9c8c83111abee5f2e9", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unsupported_late_claim"}
+{"case_id": "EC_018", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_019", "order_id": "a4e90af1c84c4455c7c4c65293ae2c78", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_seller"}
+{"case_id": "EC_019", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_020", "order_id": "4f3f48cbedce0c316c688af6fc7e9c56", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_seller"}
+{"case_id": "EC_020", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_021", "order_id": "cc8778d76e567b45082b7f52bce23095", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unsupported_late_claim"}
+{"case_id": "EC_021", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_022", "order_id": "ca0400dec2c292340c373e63b1c2c597", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "valid_split_payment"}
+{"case_id": "EC_022", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_023", "order_id": "9d0516ad96d793d308cec3c5929ed649", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_logistics"}
+{"case_id": "EC_023", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_024", "order_id": "6560fb10610771449cb0463c5ba12199", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "canceled_order_paid"}
+{"case_id": "EC_024", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_025", "order_id": "4cf6a6de996beb9d4b190c7983be98d9", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unsupported_late_claim"}
+{"case_id": "EC_025", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_026", "order_id": "9b4fc5c379134e1329bd48641ba285e3", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "canceled_order_paid"}
+{"case_id": "EC_026", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_027", "order_id": "9a71f055d972d1ebacec9df7376ff1e3", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_logistics"}
+{"case_id": "EC_027", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_028", "order_id": "1118f05e23d1a8082fa47f8a377de658", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "canceled_order_paid"}
+{"case_id": "EC_028", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_029", "order_id": "b69321fb7d3000994c5a2b55c4f3cb01", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "valid_split_payment"}
+{"case_id": "EC_029", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_030", "order_id": "676e40056867189a1b3599f3e646f421", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "canceled_order_paid"}
+{"case_id": "EC_030", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_031", "order_id": "72fa449394ed9dc9093819f93ca563af", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unavailable_order_paid"}
+{"case_id": "EC_031", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_032", "order_id": "d3782eb2976abf986175941c51364aab", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_seller"}
+{"case_id": "EC_032", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_033", "order_id": "edefc0fa09c98cc491e9d2cf95ee4a5f", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unavailable_order_paid"}
+{"case_id": "EC_033", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_034", "order_id": "b210c676cae65f95f7e08a49d195e1a1", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unavailable_order_paid"}
+{"case_id": "EC_034", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_035", "order_id": "ae443cb420061bab1f2c5e3ad279fde8", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unavailable_order_paid"}
+{"case_id": "EC_035", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_036", "order_id": "201797d3f567dc70cc5732ecf055e346", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "valid_split_payment"}
+{"case_id": "EC_036", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_037", "order_id": "9f5bd892aa4c461b116e5c163f16b40a", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_logistics"}
+{"case_id": "EC_037", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_038", "order_id": "efcd8852328a37fca811747c09c6fb69", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unsupported_late_claim"}
+{"case_id": "EC_038", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_039", "order_id": "8ac5066a163c60c1ae9bf17200df3dd1", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_seller"}
+{"case_id": "EC_039", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_040", "order_id": "992cbe3e064cd39f9ccde60a29ffcd3c", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_logistics"}
+{"case_id": "EC_040", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_041", "order_id": "614bc59c7d5e038587336616e3198e33", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "valid_split_payment"}
+{"case_id": "EC_041", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_042", "order_id": "0c65eb5a1415db7a20dfc869c9277e7a", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_seller"}
+{"case_id": "EC_042", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_043", "order_id": "e58fb7bfd033514475ab0883ded704f4", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unavailable_order_paid"}
+{"case_id": "EC_043", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_044", "order_id": "a833e4af2b4c893929b9f3adce3ecbeb", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unsupported_late_claim"}
+{"case_id": "EC_044", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_045", "order_id": "fe64170e936bc5f6a6a41def260984b9", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unsupported_late_claim"}
+{"case_id": "EC_045", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_046", "order_id": "0e3ec3c17b64c6cc7bc01bba21e7afdf", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_seller"}
+{"case_id": "EC_046", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_047", "order_id": "2cfc79d9582e9135c0a9b61fa60e6b21", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "canceled_order_paid"}
+{"case_id": "EC_047", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_048", "order_id": "b8ed89bd3f1fe72244f0f616acdc7da1", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "late_delivery_seller"}
+{"case_id": "EC_048", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_049", "order_id": "7c29f6fa9efcbf410b4bbb9362b9f7c9", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "valid_split_payment"}
+{"case_id": "EC_049", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}
+{"case_id": "EC_050", "order_id": "370098d35ccd8a2af86b57c81ac7d24f", "agents": ["coordinator", "customer", "order_product", "payment", "delivery", "policy", "verifier"], "primary_issue": "unsupported_late_claim"}
+{"case_id": "EC_050", "mode": "llm-agent", "model": "openai/gpt-4o-mini"}

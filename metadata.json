@@ -1,0 +1,10 @@
+{
+  "model": "openai/gpt-4o-mini",
+  "parameter_size": "<=10B or provider model as configured",
+  "framework": "LangChain create_agent + tool calling + structured output",
+  "runtime": {
+    "python": "3.12.3",
+    "generated_at": "2026-08-05 15:50:08"
+  },
+  "processed_cases": 50
+}
