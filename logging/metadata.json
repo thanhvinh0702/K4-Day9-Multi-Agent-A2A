@@ -1,0 +1,66 @@
+{
+  "run_date": "2026-08-05",
+  "agents": [
+    {
+      "agent": "customer_agent",
+      "model": "gpt-4o-mini",
+      "provider": "openai",
+      "parameter_size": "undisclosed by OpenAI (not confirmed <=10B, see architecture.md section 6 and PLAN.md)",
+      "role": "Xac dinh customer_unique_id va related_order_ids, goi tool get_customer_context"
+    },
+    {
+      "agent": "order_product_agent",
+      "model": "gpt-4o-mini",
+      "provider": "openai",
+      "parameter_size": "undisclosed by OpenAI (not confirmed <=10B, see architecture.md section 6 and PLAN.md)",
+      "role": "Xac dinh order/item/seller/product/category, goi tool get_order_product_context"
+    },
+    {
+      "agent": "payment_agent",
+      "model": "gpt-4o-mini",
+      "provider": "openai",
+      "parameter_size": "undisclosed by OpenAI (not confirmed <=10B, see architecture.md section 6 and PLAN.md)",
+      "role": "Doi soat payment voi item+freight, goi tool get_payment_reconciliation"
+    },
+    {
+      "agent": "delivery_agent",
+      "model": "gpt-4o-mini",
+      "provider": "openai",
+      "parameter_size": "undisclosed by OpenAI (not confirmed <=10B, see architecture.md section 6 and PLAN.md)",
+      "role": "Tinh delivery variance va seller handoff variance, goi tool get_delivery_analysis"
+    },
+    {
+      "agent": "policy_agent",
+      "model": "gpt-4o-mini",
+      "provider": "openai",
+      "parameter_size": "undisclosed by OpenAI (not confirmed <=10B, see architecture.md section 6 and PLAN.md)",
+      "role": "Ap dung EC_POLICY_V2, goi tool apply_ec_policy_v2"
+    },
+    {
+      "agent": "verifier",
+      "model": null,
+      "provider": null,
+      "parameter_size": null,
+      "role": "Deterministic guardrail (khong dung LLM) - src/verifier.py, ghi de bang ground truth va validate schema truoc khi ghi file"
+    }
+  ],
+  "framework": {
+    "orchestration": "LangGraph (StateGraph)",
+    "llm_client": "langchain-openai (ChatOpenAI)",
+    "data_layer": "pandas",
+    "validation": "pydantic v2"
+  },
+  "runtime": {
+    "python": "3.11.6",
+    "os": "Windows 11 Home Single Language",
+    "packages": {
+      "pandas": "3.0.5",
+      "langgraph": "1.2.10",
+      "langchain-openai": "1.4.1",
+      "langchain-core": "1.5.3",
+      "pydantic": "2.13.4",
+      "openai": "2.52.0",
+      "python-dotenv": "1.2.2"
+    }
+  }
+}
