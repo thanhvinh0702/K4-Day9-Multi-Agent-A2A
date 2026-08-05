@@ -128,5 +128,5 @@ cat logging/metadata.json
 - [x] Báo cáo không chứa `.env`, API key, token hoặc secret.
 - [ ] Báo cáo này không phải bản sao nguyên văn của báo cáo nhóm hoặc báo cáo thành viên khác.
 
-**Họ và tên:** [Họ và tên]  
+**Họ và tên:** Hoàng Thành Vinh  
 **Ngày xác nhận:** 2026-08-05
