@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import tempfile
 import zipfile
 from collections import Counter
@@ -16,6 +15,27 @@ from src.llm import OpenRouterClient
 from src.openrouter_policy import OpenRouterPolicyAgent
 from src.resolver import resolve_case
 from src.trace import TraceWriter
+
+
+def commit_file(staged: Path, target: Path) -> None:
+    """Copy verified bytes into the target so Windows keeps target-directory access."""
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(staged.read_bytes())
+
+
+def validate_submission_zip(path: Path, expected_names: list[str]) -> None:
+    """Hard-gate the exact submission layout required by the assignment."""
+    with zipfile.ZipFile(path, "r") as archive:
+        names = archive.namelist()
+        if names != expected_names:
+            raise ValueError(
+                "Submission ZIP must contain exactly the 50 JSON files at ZIP root; "
+                f"expected {len(expected_names)} entries, found {len(names)}"
+            )
+        for name in names:
+            if "/" in name or "\\" in name or not name.endswith(".json"):
+                raise ValueError(f"Invalid submission ZIP entry: {name}")
+            json.loads(archive.read(name).decode("utf-8"))
 
 
 def parse_args() -> argparse.Namespace:
@@ -63,6 +83,9 @@ def main() -> None:
     llm_request_failures = 0
     llm_policy_mismatches = 0
     llm_unavailable = 0
+    claims_checked = 0
+    claims_supported = 0
+    claims_rejected = 0
     with tempfile.TemporaryDirectory(
         prefix=".ec_run_", dir=output_dir.parent
     ) as temporary:
@@ -89,6 +112,9 @@ def main() -> None:
                 llm_request_failures += int(run_info["llm_request_failed"])
                 llm_policy_mismatches += int(run_info["llm_policy_mismatch"])
                 llm_unavailable += int(run_info["llm_unavailable"])
+                claims_checked += int(run_info["claim_checked"])
+                claims_supported += int(run_info["claim_supported"])
+                claims_rejected += int(run_info["claim_rejected"])
                 primary_issue = result["case_assessment"]["primary_issue"]
                 issues[primary_issue] += 1
                 target = staged_output / path.name
@@ -115,6 +141,9 @@ def main() -> None:
             "llm_request_failures": llm_request_failures,
             "llm_policy_mismatches": llm_policy_mismatches,
             "llm_unavailable_cases": llm_unavailable,
+            "customer_claims_checked": claims_checked,
+            "customer_claims_supported": claims_supported,
+            "customer_claims_rejected": claims_rejected,
             "prompt_tokens": llm.prompt_tokens if llm else 0,
             "completion_tokens": llm.completion_tokens if llm else 0,
         }
@@ -129,21 +158,19 @@ def main() -> None:
                 for case_path in case_paths:
                     staged_path = staged_output / case_path.name
                     archive.write(staged_path, arcname=staged_path.name)
+            validate_submission_zip(staged_zip, [path.name for path in case_paths])
 
         # Commit only after every case, verifier, metadata and ZIP step succeeds.
         output_dir.mkdir(parents=True, exist_ok=True)
         for case_path in case_paths:
-            os.replace(staged_output / case_path.name, output_dir / case_path.name)
+            commit_file(staged_output / case_path.name, output_dir / case_path.name)
         trace_path = Path(args.trace)
-        trace_path.parent.mkdir(parents=True, exist_ok=True)
-        os.replace(staged_trace, trace_path)
+        commit_file(staged_trace, trace_path)
         metadata_path = Path(args.metadata)
-        metadata_path.parent.mkdir(parents=True, exist_ok=True)
-        os.replace(staged_metadata, metadata_path)
+        commit_file(staged_metadata, metadata_path)
         if not args.case:
             zip_path = Path(args.zip)
-            zip_path.parent.mkdir(parents=True, exist_ok=True)
-            os.replace(staged_zip, zip_path)
+            commit_file(staged_zip, zip_path)
             print(f"Created submission ZIP: {zip_path}")
     print(f"Generated and verified {len(case_paths)} files in {output_dir}")
     for issue, count in sorted(issues.items()):

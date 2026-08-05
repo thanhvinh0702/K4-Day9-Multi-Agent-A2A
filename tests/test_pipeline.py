@@ -4,6 +4,7 @@ import unittest
 import json
 import os
 import tempfile
+import zipfile
 from pathlib import Path
 from decimal import Decimal
 from unittest.mock import patch
@@ -11,13 +12,14 @@ from unittest.mock import patch
 from src.config import LLMSettings
 from src.contracts import CaseFactBundle
 from src.llm import OpenRouterClient
+from src.main import validate_submission_zip
 from src.openrouter_policy import OpenRouterPolicyAgent
 from src.policy import DeterministicPolicyAgent
 from src.datastore import OlistDataStore
 from src.resolver import resolve_case
 from src.trace import TraceWriter
 from src.utils import hours_between, is_after, money, unique
-from src.verifier import normalize_llm_decision
+from src.verifier import normalize_llm_decision, verify_customer_claim
 from src.verifier import VerifierAgent
 
 
@@ -39,6 +41,14 @@ class UtilityTests(unittest.TestCase):
             is_after("2018-01-01 00:00:01", "2018-01-01 00:00:00")
         )
 
+    def test_submission_zip_rejects_nested_output_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "output.zip"
+            with zipfile.ZipFile(path, "w") as archive:
+                archive.writestr("output/EC_001.json", "{}")
+            with self.assertRaisesRegex(ValueError, "ZIP root"):
+                validate_submission_zip(path, ["EC_001.json"])
+
 
 class PolicyTests(unittest.TestCase):
     def setUp(self) -> None:
@@ -50,6 +60,7 @@ class PolicyTests(unittest.TestCase):
             "multi_item_order": False,
             "multi_seller_order": False,
             "multiple_categories": False,
+            "seller_ids": [],
             "late_handoff_seller_ids": [],
         }
         self.payment = {
@@ -96,6 +107,18 @@ class PolicyTests(unittest.TestCase):
         self.assertEqual(result["primary_issue"], "valid_split_payment")
         self.assertNotIn("verify_payment_allocation", result["actions"])
 
+    def test_policy_facts_expose_all_rule_matches_without_selecting_case_id(self) -> None:
+        self.payment["split_payment"] = True
+        facts = CaseFactBundle(
+            case_id="arbitrary-case-id",
+            order_seller=self.order_seller,
+            payment={**self.payment, "rows": [{}, {}]},
+            delivery=self.delivery,
+            customer=self.customer,
+        ).policy_facts()
+        self.assertTrue(facts["rule_match_flags"]["valid_split_payment"])
+        self.assertTrue(facts["rule_match_flags"]["unsupported_late_claim"])
+
     def test_normalize_accepts_confidence_only_when_policy_matches(self) -> None:
         deterministic = self.decide()
         llm = {
@@ -104,11 +127,45 @@ class PolicyTests(unittest.TestCase):
             "responsible_parties": deterministic["responsible_parties"],
             "recommended_refund_brl": deterministic["recommended_refund_brl"],
             "primary_action": deterministic["actions"][0],
-            "confidence": 1.4,
+            "confidence": 0.94,
         }
         normalized, matched = normalize_llm_decision(deterministic, llm)
         self.assertTrue(matched)
-        self.assertEqual(normalized["confidence"], 1.0)
+        self.assertEqual(normalized["confidence"], 0.94)
+
+    def test_normalize_canonicalizes_dependent_llm_fields(self) -> None:
+        deterministic = self.decide()
+        llm = {
+            "primary_issue": deterministic["primary_issue"],
+            "cause_code": "wrong",
+            "responsible_parties": [{"party_type": "seller", "party_id": "fake"}],
+            "recommended_refund_brl": 9999,
+            "primary_action": "wrong",
+            "confidence": 0.83,
+        }
+        normalized, matched = normalize_llm_decision(deterministic, llm)
+        self.assertTrue(matched)
+        self.assertEqual(normalized["cause_code"], deterministic["cause_code"])
+        self.assertEqual(
+            normalized["responsible_parties"], deterministic["responsible_parties"]
+        )
+        self.assertEqual(normalized["recommended_refund_brl"], 0.0)
+        self.assertEqual(normalized["confidence"], 0.83)
+
+    def test_customer_late_claim_is_rejected_by_computed_facts(self) -> None:
+        verification = verify_customer_claim(
+            "late_delivery",
+            {
+                "delivered_late": False,
+                "late_handoff_seller_ids": [],
+                "reconciled": True,
+                "order_status": "delivered",
+                "payment_total_brl": 100.0,
+                "payment_row_count": 1,
+            },
+        )
+        self.assertFalse(verification["claim_supported_by_data"])
+        self.assertFalse(verification["customer_message_used_as_evidence"])
 
     def test_normalize_rejects_wrong_llm_business_field(self) -> None:
         deterministic = self.decide()
@@ -164,6 +221,7 @@ class OpenRouterClientTests(unittest.TestCase):
                         "recommended_refund_brl": 0.0,
                         "primary_action": "reject_late_refund",
                         "confidence": 0.94,
+                        "claim_type": "general_investigation",
                     }
                 )
                 return json.dumps(

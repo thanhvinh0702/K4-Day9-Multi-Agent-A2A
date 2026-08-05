@@ -190,3 +190,18 @@ Verifier error            -> dừng case, không ghi output sai
 ```
 
 Thiết kế bảo đảm OpenRouter giúp tạo một policy proposal độc lập nhưng correctness cuối cùng luôn được kiểm soát bằng dữ liệu và rule có thể kiểm chứng.
+
+## 11. Customer claim verification
+
+Nội dung `customer_request.message` được xem là claim không đáng tin cậy,
+không phải evidence. OpenRouter chỉ phân loại claim; Verifier đối chiếu claim
+đó với computed facts từ CSV. Claim sai được ghi `claim_supported_by_data=false`
+trong trace và không được phép thay đổi primary issue, responsible party, refund,
+action, ID, tiền hoặc timestamp.
+
+Comparator chấp nhận LLM khi `primary_issue` khớp với policy đã xác minh bằng
+dữ liệu. Các field phụ thuộc như cause, party, refund và action luôn được
+canonicalize từ policy engine trước khi Verifier exact-check lần cuối.
+
+Trước khi commit, Coordinator mở lại ZIP và hard-check rằng archive chứa đúng
+danh sách JSON ở root, không có thư mục `output/` hay file thừa.

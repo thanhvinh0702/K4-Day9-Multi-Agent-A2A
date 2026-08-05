@@ -35,6 +35,7 @@ class TraceWriter:
         llm_decision: dict[str, Any] | None,
         matched: bool,
         fallback_reason: str | None,
+        claim_verification: dict[str, Any] | None = None,
     ) -> None:
         """Record LLM-versus-code comparison without credentials or raw data."""
         event = {
@@ -44,7 +45,10 @@ class TraceWriter:
             "deterministic_primary_issue": deterministic["primary_issue"],
             "llm_decision": llm_decision,
             "matched": matched,
-            "decision_source": "llm_confidence_only" if matched else "deterministic",
+            "decision_source": (
+                "llm_verified_classification" if matched else "deterministic"
+            ),
+            "claim_verification": claim_verification,
             "fallback_reason": fallback_reason,
         }
         self.handle.write(json.dumps(event, ensure_ascii=False) + "\n")

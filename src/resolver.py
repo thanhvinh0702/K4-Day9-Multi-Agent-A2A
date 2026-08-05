@@ -10,7 +10,11 @@ from src.contracts import CaseFactBundle
 from src.openrouter_policy import OpenRouterPolicyAgent
 from src.policy import DeterministicPolicyAgent
 from src.trace import TraceWriter
-from src.verifier import VerifierAgent, normalize_llm_decision
+from src.verifier import (
+    VerifierAgent,
+    normalize_llm_decision,
+    verify_customer_claim,
+)
 
 
 def _customer_context(store: OlistDataStore, order: dict[str, str]) -> dict:
@@ -120,7 +124,12 @@ def resolve_case(
     )
     with ThreadPoolExecutor(max_workers=2) as pool:
         deterministic_future = pool.submit(deterministic_agent.decide, facts)
-        llm_future = pool.submit(openrouter_policy.propose, case_id, policy_facts)
+        llm_future = pool.submit(
+            openrouter_policy.propose,
+            case_id,
+            policy_facts,
+            case.get("customer_request", {}),
+        )
         deterministic = deterministic_future.result()
         llm_decision, llm_error = llm_future.result()
 
@@ -143,12 +152,17 @@ def resolve_case(
         {"decision": llm_decision, "error": llm_error},
     )
     normalized, llm_matched = normalize_llm_decision(deterministic, llm_decision)
+    claim_verification = verify_customer_claim(
+        llm_decision.get("claim_type") if llm_decision else None,
+        policy_facts,
+    )
     trace.policy_comparison(
         case_id=case_id,
         deterministic=deterministic,
         llm_decision=llm_decision,
         matched=llm_matched,
         fallback_reason=llm_error,
+        claim_verification=claim_verification,
     )
 
     trace.handoff(
@@ -157,7 +171,10 @@ def resolve_case(
         verifier_agent.name,
         {
             "primary_issue": normalized["primary_issue"],
-            "decision_source": "llm_confidence_only" if llm_matched else "deterministic",
+            "decision_source": (
+                "llm_verified_classification" if llm_matched else "deterministic"
+            ),
+            "claim_verification": claim_verification,
         },
     )
     output = verifier_agent.build_output(
@@ -176,4 +193,7 @@ def resolve_case(
         "llm_request_failed": llm_decision is None
         and llm_error != "missing_api_key_or_llm_disabled",
         "llm_policy_mismatch": llm_decision is not None and not llm_matched,
+        "claim_checked": claim_verification["claim_supported_by_data"] is not None,
+        "claim_supported": claim_verification["claim_supported_by_data"] is True,
+        "claim_rejected": claim_verification["claim_supported_by_data"] is False,
     }

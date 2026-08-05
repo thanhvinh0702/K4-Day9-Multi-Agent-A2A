@@ -9,11 +9,14 @@
   "llm_requested": true,
   "llm_enabled": true,
   "llm_calls": 50,
-  "llm_policy_matches": 6,
-  "llm_fallbacks": 44,
+  "llm_policy_matches": 43,
+  "llm_fallbacks": 7,
   "llm_request_failures": 0,
-  "llm_policy_mismatches": 44,
+  "llm_policy_mismatches": 7,
   "llm_unavailable_cases": 0,
-  "prompt_tokens": 20413,
-  "completion_tokens": 4103
+  "customer_claims_checked": 0,
+  "customer_claims_supported": 0,
+  "customer_claims_rejected": 0,
+  "prompt_tokens": 34528,
+  "completion_tokens": 4627
 }

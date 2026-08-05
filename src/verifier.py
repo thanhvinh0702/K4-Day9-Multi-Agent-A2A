@@ -66,26 +66,51 @@ NESTED_KEYS = {
 def normalize_llm_decision(
     deterministic: dict, llm_decision: dict | None
 ) -> tuple[dict, bool]:
-    """Accept only LLM confidence when every business field matches code policy."""
+    """Accept a data-verified LLM classification and canonicalize dependent fields.
+
+    The source-derived deterministic decision remains the invariant.  An LLM may
+    contribute confidence only after choosing the same primary issue; malformed
+    cause, party, refund, or action fields never flow into the final output.
+    """
     result = deepcopy(deterministic)
     if llm_decision is None:
         return result, False
-    expected = {
-        "primary_issue": deterministic["primary_issue"],
-        "cause_code": deterministic["cause_code"],
-        "responsible_parties": deterministic["responsible_parties"],
-        "recommended_refund_brl": deterministic["recommended_refund_brl"],
-        "primary_action": deterministic["actions"][0],
-    }
-    if any(llm_decision.get(key) != value for key, value in expected.items()):
+    if llm_decision.get("primary_issue") != deterministic["primary_issue"]:
         return result, False
     try:
-        result["confidence"] = round(
-            min(1.0, max(0.0, float(llm_decision["confidence"]))), 2
-        )
+        confidence = float(llm_decision["confidence"])
+        if not 0 <= confidence <= 1:
+            return deepcopy(deterministic), False
+        result["confidence"] = round(confidence, 2)
     except (KeyError, TypeError, ValueError):
         return deepcopy(deterministic), False
     return result, True
+
+
+def verify_customer_claim(
+    claim_type: str | None, policy_facts: dict
+) -> dict[str, object]:
+    """Verify an LLM-extracted customer claim against computed source facts."""
+    checks = {
+        "late_delivery": bool(policy_facts["delivered_late"]),
+        "seller_delay": bool(policy_facts["late_handoff_seller_ids"]),
+        "payment_problem": policy_facts["reconciled"] is False,
+        "canceled_paid": policy_facts["order_status"] == "canceled"
+        and policy_facts["payment_total_brl"] > 0,
+        "unavailable_paid": policy_facts["order_status"] == "unavailable"
+        and policy_facts["payment_total_brl"] > 0,
+        "split_payment": policy_facts["payment_row_count"] >= 2,
+    }
+    supported: bool | None
+    if claim_type in {"general_investigation", "other", None}:
+        supported = None
+    else:
+        supported = checks.get(claim_type, False)
+    return {
+        "claim_type": claim_type,
+        "claim_supported_by_data": supported,
+        "customer_message_used_as_evidence": False,
+    }
 
 
 class VerifierAgent:
