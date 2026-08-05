@@ -1,0 +1,600 @@
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "6d6b50b66d79f80827b6d96751528d30"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "1b9ecfe83cdc259250e1a8aca174f0ad"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "1b9ecfe83cdc259250e1a8aca174f0ad"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "1b9ecfe83cdc259250e1a8aca174f0ad"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "canceled_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_001", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "e3fe72696c4713d64d3c10afe71e75ed"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "714fb133a6730ab81fa1d3c1b2007291"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "714fb133a6730ab81fa1d3c1b2007291"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "714fb133a6730ab81fa1d3c1b2007291"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "canceled_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_002", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "0913cdce793684e52bbfac69d87e91fd"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "3a129877493c8189c59c60eb71d97c29"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "3a129877493c8189c59c60eb71d97c29"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "3a129877493c8189c59c60eb71d97c29"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "canceled_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_003", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "191984a8ba4cbb2145acb4fe35b69664"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "ed3efbd3a87bea76c2812c66a0b32219"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "ed3efbd3a87bea76c2812c66a0b32219"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": null}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "ed3efbd3a87bea76c2812c66a0b32219"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "canceled_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_004", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "2fcc597b8934d99715dbfff7909dd27f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "0966b61e30c4a07edbd7523f59b3f3e4"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 3}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "0966b61e30c4a07edbd7523f59b3f3e4"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "0966b61e30c4a07edbd7523f59b3f3e4"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "canceled_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_005", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "7acf55df0298e1d2c31200fb4f6fb93b"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "9021cf1919f615a121410790dcce848f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "9021cf1919f615a121410790dcce848f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "9021cf1919f615a121410790dcce848f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "canceled_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_006", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "64a254d30eed42cd0e6c36dddb88adf0"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "8e24261a7e58791d10cb1bf9da94df5c"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "8e24261a7e58791d10cb1bf9da94df5c"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": null}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "8e24261a7e58791d10cb1bf9da94df5c"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unavailable_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_007", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "9582c5bbecc65eb568e2c1d839b5cba1"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "c272bcd21c287498b4883c7512019702"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "c272bcd21c287498b4883c7512019702"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": null}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "c272bcd21c287498b4883c7512019702"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unavailable_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_008", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "7607cd563696c27ede287e515812d528"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "37553832a3a89c9b2db59701c357ca67"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "37553832a3a89c9b2db59701c357ca67"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": null}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "37553832a3a89c9b2db59701c357ca67"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unavailable_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_009", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "470b93b3f1cde85550fc74cd3a476c78"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "d57e15fb07fd180f06ab3926b39edcd2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "d57e15fb07fd180f06ab3926b39edcd2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": null}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "d57e15fb07fd180f06ab3926b39edcd2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unavailable_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_010", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "7353b0fb8e8d9675e3a704c60ca44ebe"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "2f634e2cebf8c0283e7ef0989f77d217"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "2f634e2cebf8c0283e7ef0989f77d217"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": null}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "2f634e2cebf8c0283e7ef0989f77d217"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unavailable_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_011", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "aae50600d30bf2efe013ca4c1754ded7"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "ee0db22a8e742b752914016708470ec8"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "ee0db22a8e742b752914016708470ec8"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": null}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "ee0db22a8e742b752914016708470ec8"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unavailable_order_paid"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_012", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "9ef432eb6251297304e76186b10a928d"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "e481f51cbdc54678b7cc49136f2d6af7"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "e481f51cbdc54678b7cc49136f2d6af7"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "e481f51cbdc54678b7cc49136f2d6af7"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "valid_split_payment"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_013", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "31ad1d1b63eb9962463f764d4e6e0c9d"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "e69bfb5eb88e0ed6a785585b27e16dbf"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "e69bfb5eb88e0ed6a785585b27e16dbf"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "e69bfb5eb88e0ed6a785585b27e16dbf"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "valid_split_payment"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_014", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "7f8c8b9c2ae27bf3300f670c3d478be8"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "83018ec114eee8641c97e08f7b4e926f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "83018ec114eee8641c97e08f7b4e926f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "83018ec114eee8641c97e08f7b4e926f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "valid_split_payment"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_015", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "05e996469a2bf9559c7122b87e156724"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "634e8f4c0f6744a626f77f39770ac6aa"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "634e8f4c0f6744a626f77f39770ac6aa"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "634e8f4c0f6744a626f77f39770ac6aa"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "valid_split_payment"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_016", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "0bf19317b1830a69e55b40710576aa7a"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "f7959f8385f34c4f645327465a1c9fc4"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "f7959f8385f34c4f645327465a1c9fc4"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "f7959f8385f34c4f645327465a1c9fc4"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "valid_split_payment"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_017", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "8ed14e450a6268ec13f325e7c2eafeed"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "b2bd1f09c1b8a4a36940f6f6e49d5dec"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "b2bd1f09c1b8a4a36940f6f6e49d5dec"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "b2bd1f09c1b8a4a36940f6f6e49d5dec"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "valid_split_payment"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_018", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "7df71d1652cfba8b2a70cf665c960f74"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "a03ad7057fae696dd18f8967826c209f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "a03ad7057fae696dd18f8967826c209f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "a03ad7057fae696dd18f8967826c209f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "valid_split_payment"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_019", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "0385c03f2b10a0a50ee72d8e3649a4b3"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "fd9b8ed51e5ffedf7a56bea36cc5b6f9"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "fd9b8ed51e5ffedf7a56bea36cc5b6f9"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "fd9b8ed51e5ffedf7a56bea36cc5b6f9"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "valid_split_payment"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_020", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "94f7f1cb719dd707fd437e918d282537"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "bb4f0c21ae6014e40ef007ff6fbcbeb9"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "bb4f0c21ae6014e40ef007ff6fbcbeb9"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "bb4f0c21ae6014e40ef007ff6fbcbeb9"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "valid_split_payment"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_021", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "ed532487db04478dfba09d112649fc13"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "f31535f21d145b2345e2bf7f09d62322"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "f31535f21d145b2345e2bf7f09d62322"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "f31535f21d145b2345e2bf7f09d62322"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_logistics"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_022", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "d2b091571da224a1b36412c18bc3bbfe"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "203096f03d82e0dffbc41ebc2e2bcfb7"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "203096f03d82e0dffbc41ebc2e2bcfb7"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "203096f03d82e0dffbc41ebc2e2bcfb7"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_seller"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_023", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "3a874b4d4c4b6543206ff5d89287f0c3"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "fbf9ac61453ac646ce8ad9783d7d0af6"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "fbf9ac61453ac646ce8ad9783d7d0af6"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "fbf9ac61453ac646ce8ad9783d7d0af6"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_logistics"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_024", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "5f16605299d698660e0606f7eae2d2f9"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "8563039e855156e48fccee4d611a3196"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "8563039e855156e48fccee4d611a3196"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "8563039e855156e48fccee4d611a3196"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_logistics"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_025", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "c7340080e394356141681bd4c9b8fe31"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "6ea2f835b4556291ffdc53fa0b3b95e8"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "6ea2f835b4556291ffdc53fa0b3b95e8"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "6ea2f835b4556291ffdc53fa0b3b95e8"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_seller"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_026", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "684fa6da5134b9e4dab731e00011712d"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "66e4624ae69e7dc89bd50222b59f581f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 2}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "66e4624ae69e7dc89bd50222b59f581f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "66e4624ae69e7dc89bd50222b59f581f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_logistics"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_027", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "911e4c37f5cafe1604fe6767034bf1ae"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 2}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "a685d016c8a26f71a0bb67821070e398"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "a685d016c8a26f71a0bb67821070e398"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "a685d016c8a26f71a0bb67821070e398"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_seller"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_028", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "68451b39b1314302c08c65a29f1140fc"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "6a0a8bfbbe700284feb0845d95e0867f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "6a0a8bfbbe700284feb0845d95e0867f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "6a0a8bfbbe700284feb0845d95e0867f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_logistics"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_029", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "ef15b3240b2083e0487762ee2978d2b8"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "a5474c0071dd5d1074e12d417078bbd0"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "a5474c0071dd5d1074e12d417078bbd0"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "a5474c0071dd5d1074e12d417078bbd0"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_logistics"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_030", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "d4faa220408c20e53595d2950f361f3b"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "9d531c565e28c3e0d756192f84d8731f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "9d531c565e28c3e0d756192f84d8731f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "9d531c565e28c3e0d756192f84d8731f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_seller"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_031", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "c69f8b33e62ecb30ff78ae46d7fb9241"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "8fc207e94fa91a7649c5a5dab690272a"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "8fc207e94fa91a7649c5a5dab690272a"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "8fc207e94fa91a7649c5a5dab690272a"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_logistics"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_032", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "35ec6c1ca9e5844c5ca94214cce16dca"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "33a3edb84b9df4cb49546859b990ac6d"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "33a3edb84b9df4cb49546859b990ac6d"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "33a3edb84b9df4cb49546859b990ac6d"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_logistics"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_033", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "0489975a325480c9e385e9f135bb13c3"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "1d067305b599c1e0dceb3864056ea527"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "1d067305b599c1e0dceb3864056ea527"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "1d067305b599c1e0dceb3864056ea527"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_logistics"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_034", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "a338f42b6e47cb49d5c5128a348b76ba"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "3f849648ffbabb0562c7668f212e3e88"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "3f849648ffbabb0562c7668f212e3e88"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "3f849648ffbabb0562c7668f212e3e88"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_logistics"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_035", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "c178d6d544925594fafab0ba493cd645"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "c82a457d646f77c8f151e12a3e517ed2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "c82a457d646f77c8f151e12a3e517ed2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "c82a457d646f77c8f151e12a3e517ed2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_logistics"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_036", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "02ed2cff54eb047cdbe79dd0535945d4"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "fb9b2930f4a30f96c7cc98eaaa85e5f0"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "fb9b2930f4a30f96c7cc98eaaa85e5f0"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "fb9b2930f4a30f96c7cc98eaaa85e5f0"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "late_delivery_seller"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_037", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "b0830fb4747a6c6d20dea0b8c802d7ef"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "53cdb2fc8bc7dce0b6741e2150273451"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "53cdb2fc8bc7dce0b6741e2150273451"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "53cdb2fc8bc7dce0b6741e2150273451"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_038", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "41ce2a54c0b03bf3443c3d931a367089"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "47770eb9100c2d0c44946d9cf07ec65d"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "47770eb9100c2d0c44946d9cf07ec65d"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "47770eb9100c2d0c44946d9cf07ec65d"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_039", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "f88197465ea7920adcdbec7375364d82"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "949d5b44dbf5de918fe9c16f97b45f8a"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "949d5b44dbf5de918fe9c16f97b45f8a"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "949d5b44dbf5de918fe9c16f97b45f8a"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_040", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "8ab97904e6daea8866dbdbc4fb7aad2c"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "ad21c59c0840e6cb83a9ceb5573f8159"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "ad21c59c0840e6cb83a9ceb5573f8159"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "ad21c59c0840e6cb83a9ceb5573f8159"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_041", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "503740e9ca751ccdda7ba28e9ab8f608"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "a4591c265e18cb1dcee52889e2d8acc3"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "a4591c265e18cb1dcee52889e2d8acc3"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "a4591c265e18cb1dcee52889e2d8acc3"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_042", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "9bdf08b4b3b52b5526ff42d37d47f222"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "6514b8ad8028c9f2cc2374ded245783f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "6514b8ad8028c9f2cc2374ded245783f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "6514b8ad8028c9f2cc2374ded245783f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_043", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "f54a9f0e6b351c431402b8461ea51999"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "76c6e866289321a7c93b82b54852dc33"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "76c6e866289321a7c93b82b54852dc33"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "76c6e866289321a7c93b82b54852dc33"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_044", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "494dded5b201313c64ed7f100595b95c"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "e6ce16cb79ec1d90b1da9085a6118aeb"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 2}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "e6ce16cb79ec1d90b1da9085a6118aeb"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "e6ce16cb79ec1d90b1da9085a6118aeb"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_045", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "7711cf624183d843aafe81855097bc37"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "34513ce0c4fab462a55830c0989c7edb"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "34513ce0c4fab462a55830c0989c7edb"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "34513ce0c4fab462a55830c0989c7edb"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_046", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "d3e3b74c766bc6214e0c830b17ee2341"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "82566a660a982b15fb86e904c8d32918"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "82566a660a982b15fb86e904c8d32918"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "82566a660a982b15fb86e904c8d32918"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_047", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "19402a48fe860416adf93348aba37740"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "5ff96c15d0b717ac6ad1f3d77225a350"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "5ff96c15d0b717ac6ad1f3d77225a350"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "5ff96c15d0b717ac6ad1f3d77225a350"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_048", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "3df704f53d3f1d4818840b34ec672a9f"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 0}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "432aaf21d85167c2c86ec9448c4e42cc"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "432aaf21d85167c2c86ec9448c4e42cc"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "432aaf21d85167c2c86ec9448c4e42cc"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_049", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "CustomerAgent", "action": "lookup_identity", "input_summary": {"customer_id": "3b6828a50ffe546942b7a473d70ac0fc"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "CustomerAgent", "action": "lookup_identity_complete", "input_summary": {}, "output_summary": {"related_orders_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "OrderProductAgent", "action": "extract_items_and_products", "input_summary": {"claimed_order_id": "dcb36b511fcac050b97cd5c05de84dc3"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "OrderProductAgent", "action": "extract_complete", "input_summary": {}, "output_summary": {"items_count": 1}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "PaymentAgent", "action": "reconcile_payments", "input_summary": {"claimed_order_id": "dcb36b511fcac050b97cd5c05de84dc3"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "PaymentAgent", "action": "reconcile_complete", "input_summary": {}, "output_summary": {"reconciled": true}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "DeliveryAgent", "action": "audit_delivery_and_handoff", "input_summary": {"claimed_order_id": "dcb36b511fcac050b97cd5c05de84dc3"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "DeliveryAgent", "action": "audit_complete", "input_summary": {}, "output_summary": {"is_late": false}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "PolicyAgent", "action": "evaluate_policy_rules", "input_summary": {"policy_version": "EC_POLICY_V2"}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "PolicyAgent", "action": "evaluation_complete", "input_summary": {}, "output_summary": {"primary_issue": "unsupported_late_claim"}}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "VerifierAgent", "action": "schema_validation", "input_summary": {}, "output_summary": "started"}
+{"timestamp": "2026-08-05 08:10:11", "case_id": "EC_050", "agent": "VerifierAgent", "action": "schema_validation_complete", "input_summary": {}, "output_summary": "verified"}

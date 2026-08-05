@@ -1,0 +1,8 @@
+{
+  "model": "qwen2.5-7b-instruct",
+  "parameter_size": "7B",
+  "framework": "Custom Async Handoff Multi-Agent System (Python)",
+  "runtime": "Python 3.11 / Mac M-Series",
+  "total_cases_processed": 50,
+  "policy_version": "EC_POLICY_V2"
+}
